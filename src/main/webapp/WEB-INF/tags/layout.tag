@@ -21,7 +21,13 @@
 		<div id="main">
 			<div id="content">		
 				<div class="fixedwidth">
-					<a href="<c:url value="/home" />">
+					<div class="left"><a href="<c:url value="/home" />">HOME</a></div>
+					<div class="right">
+						<a href="?lang=pl">PL</a>
+						<a href="?lang=en">EN</a>
+					</div>
+					<div class="clear"></div>
+					
 					<jsp:doBody/>
 				</div>
 			</div>
