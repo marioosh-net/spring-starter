@@ -16,7 +16,7 @@
 	<title><spring:message code="label.appname"/></title>
 </head>
 <body id="body">
-	<%@include file="/WEB-INF/templates/debug.jsp" %>
+	<%-- <%@include file="/WEB-INF/templates/debug.jsp" %> --%>
 	<div id="wrapper">	
 		<div id="main">
 			<div id="content">		
