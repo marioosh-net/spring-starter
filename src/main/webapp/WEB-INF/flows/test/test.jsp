@@ -3,4 +3,8 @@
 <t:layout>
 	<div>Test Flow</div>
 	<div>${helloMessage}</div>
+	
+	<div>
+		<a href="${flowExecutionUrl}&_eventId=home">Home</a>
+	</div>
 </t:layout> 

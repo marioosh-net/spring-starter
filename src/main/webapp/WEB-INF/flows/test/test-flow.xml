@@ -11,6 +11,10 @@
 		<on-entry>
 			<set name="viewScope.helloMessage" value="msg"></set>
 		</on-entry>
+		<transition on="home" to="home">
+		</transition>
 	</view-state>
+	
+	<end-state id="home" view="home"/>	
 	
 </flow>

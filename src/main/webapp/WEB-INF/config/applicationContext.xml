@@ -85,6 +85,7 @@
 	<!-- simple controllers -->
 	<mvc:view-controller path="/404.html" view-name="404"/>
 	<mvc:view-controller path="/403.html" view-name="403"/>
+	<mvc:view-controller path="/500.html" view-name="500"/>
 	<mvc:view-controller path="/error.html" view-name="error"/>
 	
 	<!-- static resources -->
