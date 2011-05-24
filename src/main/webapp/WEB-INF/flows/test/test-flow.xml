@@ -3,20 +3,21 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/webflow
         http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd"
-    start-state="test">
+    start-state="one">
 
 	<input name="msg"/>
 	
-	<view-state id="test">
+	<view-state id="one">
 		<on-entry>
 			<set name="viewScope.helloMessage" value="msg"></set>
 		</on-entry>
-		<transition on="home" to="home"/>
 		<transition on="two" to="two"/>
+		<transition on="home" to="home"/>
 	</view-state>
 	
 	<view-state id="two">
-		<transition on="one" to="test"/>
+		<transition on="one" to="one"/>
+		<transition on="home" to="home"/>
 	</view-state>
 	
 	<end-state id="home" view="externalRedirect:contextRelative:/home" />
