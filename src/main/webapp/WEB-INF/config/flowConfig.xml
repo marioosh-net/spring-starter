@@ -38,6 +38,9 @@
 	<!-- Enables FlowHandler URL mapping -->
 	<bean class="org.springframework.webflow.mvc.servlet.FlowHandlerAdapter">
 	    <property name="flowExecutor" ref="flowExecutor" />
+		<property name="flowUrlHandler">
+			<bean class="net.marioosh.gallery.utils.PrettyFlowUrlHandler"/>
+		</property>	    
 	</bean>
 
 	<!-- The registry of executable flow definitions -->
@@ -56,6 +59,9 @@
 	    -->
 	    <!-- after mvc controllers --> 
 	    <property name="order" value="0"/>
+	    <property name="flowUrlHandler">
+	    	<bean class="net.marioosh.gallery.utils.PrettyFlowUrlHandler"></bean>
+	    </property>
 	</bean>
 			
 	<bean id="securityFlowExecutionListener" class="org.springframework.webflow.security.SecurityFlowExecutionListener" />
