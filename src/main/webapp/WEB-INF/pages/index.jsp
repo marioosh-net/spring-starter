@@ -3,9 +3,9 @@
 <t:layout>
 	<img src="<c:url value="/r/images/ajax.gif"/>"/>	
 	<div>
-		<spring:message code="hello"/>
+		<spring:message code="hello"/><br/>${msg}
 	</div>
 	
-	<a href="<c:url value="/test"/>">&raquo;&#160;WebFlow</a>
+	<a href="<c:url value="/test?msg=Hello Flow!"/>">&raquo;&#160;WebFlow</a>
 	
 </t:layout>

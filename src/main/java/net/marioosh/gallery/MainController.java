@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.Validator;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
@@ -44,7 +45,13 @@ public class MainController {
 	}
 
 	@RequestMapping(value={"/home", "/"})
-	public String index(Model model) {
+	public String index() {
+		return "index";
+	}
+	
+	@RequestMapping(value={"/home/{msg}"})
+	public String index(@PathVariable String msg, Model model) {
+		model.addAttribute("msg", msg);
 		return "index";
 	}
 	
