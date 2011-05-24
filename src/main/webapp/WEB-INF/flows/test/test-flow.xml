@@ -11,10 +11,14 @@
 		<on-entry>
 			<set name="viewScope.helloMessage" value="msg"></set>
 		</on-entry>
-		<transition on="home" to="home">
-		</transition>
+		<transition on="home" to="home"/>
+		<transition on="two" to="two"/>
 	</view-state>
 	
-	<end-state id="home" view="home"/>	
+	<view-state id="two">
+		<transition on="one" to="test"/>
+	</view-state>
+	
+	<end-state id="home" view="externalRedirect:contextRelative:/home" />
 	
 </flow>

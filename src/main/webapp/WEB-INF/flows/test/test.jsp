@@ -1,10 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="/WEB-INF/templates/taglibs.jsp" %>
 <t:layout>
-	<div>Test Flow</div>
-	<div>${helloMessage}</div>
-	
-	<div>
-		<a href="${flowExecutionUrl}&_eventId=home">Home</a>
-	</div>
+	Page 1<span> ${helloMessage}</span><br/>
+	<a href="${flowExecutionUrl}&_eventId=two">Two</a><br/>
+	<a href="${flowExecutionUrl}&_eventId=home">&raquo;&#160;MVC</a>	
 </t:layout> 

@@ -6,6 +6,6 @@
 		<spring:message code="hello"/>
 	</div>
 	
-	<a href="<c:url value="/test"/>">test flow</a>
+	<a href="<c:url value="/test"/>">&raquo;&#160;WebFlow</a>
 	
 </t:layout>
