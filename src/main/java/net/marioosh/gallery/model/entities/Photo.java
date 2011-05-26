@@ -1,12 +1,14 @@
 package net.marioosh.gallery.model.entities;
 
 import java.io.Serializable;
+import org.hibernate.validator.constraints.NotEmpty;
 
 
 public class Photo extends AbstractEntity implements Serializable {
 
 	private Long id;
 
+	@NotEmpty
 	private String name;
 
 	public Photo() {	
