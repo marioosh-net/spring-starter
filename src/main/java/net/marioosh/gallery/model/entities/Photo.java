@@ -1,7 +1,9 @@
 package net.marioosh.gallery.model.entities;
 
+import java.io.Serializable;
 
-public class Photo extends AbstractEntity {
+
+public class Photo extends AbstractEntity implements Serializable {
 
 	private Long id;
 

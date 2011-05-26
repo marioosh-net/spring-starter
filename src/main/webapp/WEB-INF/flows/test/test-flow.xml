@@ -4,7 +4,9 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/webflow
         http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd"
     start-state="one">
-
+    
+	<var name="photo" class="net.marioosh.gallery.model.entities.Photo"/>
+	
 	<input name="msg"/>
 	
 	<view-state id="one">
@@ -14,6 +16,8 @@
 		<transition on="two" to="two"/>
 		<transition on="home" to="home"/>
 		<transition on="home2" to="home2"/>
+		<transition on="data" to="data"/>
+		<transition on="test2" to="test2"/>
 	</view-state>
 	
 	<view-state id="two">
@@ -23,5 +27,12 @@
 	
 	<end-state id="home" view="externalRedirect:contextRelative:/home" />
 	<end-state id="home2" view="externalRedirect:contextRelative:/home/#{msg}" />
+	<end-state id="data" view="externalRedirect:contextRelative:/data" >
+		<output name="data" value="flowScope.photo" type="net.marioosh.gallery.model.entities.Photo"/>
+	</end-state>
+	
+	<end-state id="test2">
+		<output name="id" value="123"/>
+	</end-state>
 	
 </flow>
