@@ -1,6 +1,8 @@
 package net.marioosh.gallery.utils;
 
 import javax.servlet.http.HttpServletRequest;
+import net.marioosh.gallery.DataHandler;
+import org.apache.log4j.Logger;
 import org.springframework.webflow.context.servlet.DefaultFlowUrlHandler;
 import org.springframework.webflow.core.collection.AttributeMap;
 
@@ -11,6 +13,8 @@ import org.springframework.webflow.core.collection.AttributeMap;
  */
 public class PrettyFlowUrlHandler extends DefaultFlowUrlHandler {
 
+	private Logger log = Logger.getLogger(PrettyFlowUrlHandler.class);
+	
 	@Override
 	public String createFlowDefinitionUrl(String flowId, AttributeMap input,
 			HttpServletRequest request) {
@@ -25,7 +29,9 @@ public class PrettyFlowUrlHandler extends DefaultFlowUrlHandler {
 
 	protected String cleanUrl(String url, HttpServletRequest request) {
 		String pattern = request.getServletPath().substring(1) + "/";
-		return url.replaceFirst(pattern, "");
+		String clean = url.replaceFirst(pattern, "");
+		log.debug("clean url: "+ url + " -> " + clean);
+		return clean;
 	}
 
 }

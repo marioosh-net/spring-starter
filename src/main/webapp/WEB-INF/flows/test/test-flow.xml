@@ -17,6 +17,7 @@
 		<transition on="home" to="home"/>
 		<transition on="home2" to="home2"/>
 		<transition on="data" to="data"/>
+		<transition on="custom-handler" to="custom-handler"/>
 		<transition on="test2" to="test2"/>
 	</view-state>
 	
@@ -27,6 +28,9 @@
 	
 	<end-state id="home" view="externalRedirect:contextRelative:/home" />
 	<end-state id="home2" view="externalRedirect:contextRelative:/home/#{msg}" />
+	<end-state id="custom-handler">
+		<output name="outphoto" value="flowScope.photo" type="net.marioosh.gallery.model.entities.Photo"/>
+	</end-state>
 	<end-state id="data" view="externalRedirect:contextRelative:/data" >
 		<output name="data" value="flowScope.photo" type="net.marioosh.gallery.model.entities.Photo"/>
 	</end-state>
