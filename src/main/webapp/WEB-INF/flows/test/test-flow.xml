@@ -5,6 +5,7 @@
         http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd"
     start-state="one">
     
+    <!-- flow scope variable -->
 	<var name="photo" class="net.marioosh.gallery.model.entities.Photo"/>
 	
 	<input name="msg"/>
@@ -12,6 +13,7 @@
 	<view-state id="one">
 		<on-entry>
 			<set name="viewScope.helloMessage" value="msg"></set>
+			<evaluate expression="photo.setName(photo.getName()+'one;')"/>
 		</on-entry>
 		<transition on="two" to="two"/>
 		<transition on="home" to="home"/>
@@ -22,6 +24,9 @@
 	</view-state>
 	
 	<view-state id="two">
+		<on-entry>
+			<evaluate expression="photo.setName(photo.getName()+'two;')"/>
+		</on-entry>
 		<transition on="one" to="one"/>
 		<transition on="home" to="home"/>
 	</view-state>

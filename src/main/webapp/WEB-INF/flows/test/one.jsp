@@ -2,6 +2,7 @@
 <%@ include file="/WEB-INF/templates/taglibs.jsp" %>
 <t:layout>
 	Page 1<span> ${helloMessage}</span><br/>
+	photo.name:${photo.name}<br/>
 	<a href="${flowExecutionUrl}&_eventId=two">Two</a><br/>
 	<a href="${flowExecutionUrl}&_eventId=data">Data</a><br/>
 	<a href="${flowExecutionUrl}&_eventId=custom-handler">Custom Flow Handler</a><br/>
