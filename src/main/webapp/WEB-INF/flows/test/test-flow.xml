@@ -26,12 +26,12 @@
 		<transition on="home" to="home"/>
 	</view-state>
 	
-	<end-state id="home" view="externalRedirect:contextRelative:/home" />
-	<end-state id="home2" view="externalRedirect:contextRelative:/home/#{msg}" />
+	<end-state id="home" view="externalRedirect:contextRelative:/app/home" />
+	<end-state id="home2" view="externalRedirect:contextRelative:/app/home/#{msg}" />
 	<end-state id="custom-handler">
 		<output name="outphoto" value="flowScope.photo" type="net.marioosh.gallery.model.entities.Photo"/>
 	</end-state>
-	<end-state id="data" view="externalRedirect:contextRelative:/data" >
+	<end-state id="data" view="externalRedirect:contextRelative:/app/data" >
 		<output name="data" value="flowScope.photo" type="net.marioosh.gallery.model.entities.Photo"/>
 	</end-state>
 	

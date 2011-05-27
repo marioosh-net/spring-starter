@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="/WEB-INF/templates/taglibs.jsp" %>
 <t:layout>
-	<img src="<c:url value="/r/images/ajax.gif"/>"/>	
+	<img src="<c:url value="/images/ajax.gif"/>"/>	
 	<div>
 		<spring:message code="hello"/><br/>${msg}
 	</div>
 	
-	<a href="<c:url value="/test?msg=Hello Flow!"/>">&raquo;&#160;WebFlow</a>
-	<a href="<c:url value="/simple"/>">&raquo;&#160;Form</a>
+	<a href="<c:url value="/app/test?msg=Hello Flow!"/>">&raquo;&#160;WebFlow</a>
+	<a href="<c:url value="/app/simple"/>">&raquo;&#160;Form</a>
 	
 </t:layout>

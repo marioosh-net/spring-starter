@@ -88,8 +88,9 @@
 	<mvc:view-controller path="/500.html" view-name="500"/>
 	<mvc:view-controller path="/error.html" view-name="error"/>
 	
-	<!-- static resources -->
+	<!-- static resources 
 	<mvc:resources mapping="/r/**" location="/WEB-INF"/>
+	-->
 
 	<!-- scheduler
 	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
