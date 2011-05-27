@@ -1,7 +1,3 @@
 <%-- UWAGA: nie uzywany jesli jest urlrewrite --%>
-<html>
-<body>
-<h2>Hello World!</h2>
+<%-- lecimy do dispatcher'a --%>
 <jsp:forward page="/app/" />
-</body>
-</html>
