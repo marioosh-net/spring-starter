@@ -21,6 +21,10 @@
 		<div id="main">
 			<div id="content">		
 				<div class="fixedwidth">
+					<div>
+						<%@include file="/WEB-INF/templates/login.jsp" %>
+					</div>
+					
 					<div class="left"><a href="<c:url value="/app/home" />">HOME</a></div>
 					<div class="right">
 						<a href="?lang=pl">PL</a>

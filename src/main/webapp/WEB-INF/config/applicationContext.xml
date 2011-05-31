@@ -130,20 +130,36 @@
 	<!-- ============================= -->
 	<!-- Spring Security               -->
 	<!-- ============================= -->
+	<!-- tego chyba nie musi byc... 
+	<bean id="authenticationManager" class="org.springframework.security.authentication.ProviderManager">
+		<property name="providers">
+			<list>
+				<bean class="org.springframework.security.authentication.dao.DaoAuthenticationProvider">
+					<property name="userDetailsService" ref="userDAO" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+	-->
 	<!-- disable-url-rewriting="true" - prevent appending ;jsessionid=XXX to urls -->
 	<security:http auto-config="true" use-expressions="true" disable-url-rewriting="true">
-		<security:form-login authentication-failure-url="/loginfail" login-page="/home" />
-		<security:logout logout-success-url="/home" logout-url="/logout" />
-		<security:remember-me key="AeVu0mee" />
+		<security:form-login authentication-failure-url="/app/home?loginfail=1" login-page="/app/home" />
+		<security:logout logout-success-url="/app/home" logout-url="/app/logout" />
+		<security:remember-me key="AeVu0mee" />		
 	</security:http>
 	<security:authentication-manager>
+		<!-- stala lista uzytkownikow 
 		<security:authentication-provider>
 			<security:password-encoder hash="md5" />
 			<security:user-service>
-		        <!-- 098f6bcd4621d373cade4e832627b4f6 = test --> 
 		        <security:user name="admin"    password="098f6bcd4621d373cade4e832627b4f6" authorities="ROLE_ADMIN" />
 		        <security:user name="user"     password="098f6bcd4621d373cade4e832627b4f6" authorities="ROLE_USER" />
 			</security:user-service>
+		</security:authentication-provider>
+		-->
+		<!-- na dao -->	
+		<security:authentication-provider user-service-ref="userDAO" >
+			<security:password-encoder hash="md5" />
 		</security:authentication-provider>
 	</security:authentication-manager>
 
