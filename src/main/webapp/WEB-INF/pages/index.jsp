@@ -7,6 +7,6 @@
 	</div>
 	
 	<a href="<c:url value="/app/test?msg=Hello Flow!"/>">&raquo;&#160;WebFlow</a>
-	<a href="<c:url value="/app/simple"/>">&raquo;&#160;Form</a>
+	<a href="<c:url value="/app/form"/>">&raquo;&#160;Form</a>
 	
 </t:layout>

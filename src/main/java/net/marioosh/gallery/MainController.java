@@ -31,9 +31,6 @@ public class MainController {
 	@Autowired
 	private PhotoDAO photoDAO;
 
-	@Autowired
-	private UtilService utilService;
-	
 	/**
 	 * metoda poleci przy obsludze kazdego requesta, bo @ModelAttribute
 	 * dorzucam do niej inne modelAttributy poprzed parametr model 
