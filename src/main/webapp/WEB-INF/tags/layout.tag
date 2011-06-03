@@ -27,8 +27,8 @@
 					
 					<div class="left"><a href="<c:url value="/app/home" />">HOME</a></div>
 					<div class="right">
-						<a href="?lang=pl">PL</a>
-						<a href="?lang=en">EN</a>
+						<a href="<c:url value="/app/home?lang=pl"/>">PL</a>
+						<a href="<c:url value="/app/home?lang=en"/>">EN</a>
 					</div>
 					<div class="clear"></div>
 					
