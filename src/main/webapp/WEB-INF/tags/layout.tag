@@ -22,7 +22,13 @@
 			<div id="content">		
 				<div class="fixedwidth">
 					<div>
-						<%@include file="/WEB-INF/templates/login.jsp" %>
+						<security:authorize ifAnyGranted="ROLE_USER,ROLE_ADMIN">
+							<security:authentication property="principal.username" />&#160;<a href="<c:url value="/app/logout"/>"><spring:message code="button.logout"/></a>
+						</security:authorize>
+						<security:authorize ifNotGranted="ROLE_USER,ROLE_ADMIN">
+							<a href="<c:url value="/app/login"/>"><spring:message code="button.login"/></a>
+						</security:authorize>
+						<%-- <%@include file="/WEB-INF/templates/login.jsp" %> --%>
 					</div>
 					
 					<div class="left"><a href="<c:url value="/app/home" />">HOME</a></div>
