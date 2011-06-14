@@ -66,10 +66,24 @@ public class MainController {
 		return "index";
 	}	
 	
+	@RequestMapping("/exception")
+	public void testException() throws Exception {
+		throw new Exception("Exception !!!");
+	}
+	
+	@RequestMapping("/exception2")
+	public void testException2() throws Exception {
+		throw new NullPointerException("NullPointerException !!!");
+	}
+	
+	/*
+	 * teraz jest ogolny: SimpleMappingExceptionResolver
+	 * 
 	@ExceptionHandler(Exception.class)
 	public ModelAndView handleException(Exception ex) throws IOException {
 		log.error(ex.getMessage(), ex);
 		return new ModelAndView("error", "message", ex.getMessage());
 	}	
+	*/
 
 }

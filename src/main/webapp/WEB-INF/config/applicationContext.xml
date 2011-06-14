@@ -113,7 +113,24 @@
 	</bean>
 	-->
 	
+	<!-- exception handler, zamiast @ExceptionHandler -->
+	<!-- dziala na poziomie controllerów, nie zadziała np. przy 404: page not found -->
+	<bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+		<!-- domyslna strona bledu -->
+		<property name="defaultErrorView" value="error"/>
+		<property name="exceptionMappings">
+			<props>
+				<!-- mapuje wyjatek do nazwy view -->
+				<prop key="org.springframework.security.access.AccessDeniedException">403</prop>
+				<!-- <prop key="...XXXException">unknownError</prop> -->
+				<!-- ... etc. -->
+			</props>
+		</property>
+	</bean> 
+	
+	<!-- ============================= -->
 	<!-- Spring Web Flow --> 
+	<!-- ============================= -->
 	<import resource="flowConfig.xml" />
 
 	<!-- ============================= -->

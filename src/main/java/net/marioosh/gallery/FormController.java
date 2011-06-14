@@ -45,10 +45,4 @@ public class FormController {
 		return "form";
 	}	
 	
-	@ExceptionHandler(Exception.class)
-	public ModelAndView handleException(Exception ex) throws IOException {
-		log.error(ex.getMessage(), ex);
-		return new ModelAndView("error", "message", ex.getMessage());
-	}	
-
 }
