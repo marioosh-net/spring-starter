@@ -7,6 +7,7 @@
 	xmlns:security="http://www.springframework.org/schema/security" 
 	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:webflow="http://www.springframework.org/schema/webflow-config"
+	xmlns:p="http://www.springframework.org/schema/p"
 	xsi:schemaLocation="
      http://www.springframework.org/schema/beans 
      http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
@@ -70,14 +71,9 @@
 		
 	<!-- i18n -->
 	<mvc:interceptors>    
-    	<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
-    		<property name="paramName" value="lang" />
-    	</bean>
+    	<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor" p:paramName="lang"/>
 	</mvc:interceptors>
-	<bean id="localeResolver" class="org.springframework.web.servlet.i18n.CookieLocaleResolver">
-		<property name="defaultLocale" value="pl"/>
-	</bean>
-	
+	<bean id="localeResolver" class="org.springframework.web.servlet.i18n.CookieLocaleResolver" p:defaultLocale="pl"/>
 
 	<!-- teraz dziala adnotacja @Secured i @PreAuthorize -->
 	<security:global-method-security secured-annotations="enabled" pre-post-annotations="enabled" />
@@ -113,10 +109,11 @@
 	</bean>
 	-->
 	
+	<!-- jawnie zdefiniowany, zeby ustawic order i zeby dzialaly w pierwszej kolejnosci adnotacje @ExceptionHandler -->
+	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerExceptionResolver" p:order="0"/>
 	<!-- exception handler, zamiast @ExceptionHandler -->
 	<!-- dziala na poziomie controllerów, nie zadziała np. przy 404: page not found -->
-	<bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
-		<!-- domyslna strona bledu -->
+	<bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver" p:order="1">
 		<property name="defaultErrorView" value="error"/>
 		<property name="exceptionMappings">
 			<props>
