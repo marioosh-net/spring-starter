@@ -16,6 +16,7 @@
 		<input type="checkbox" name="_spring_security_remember_me" style="width: 15px; height: 10px;" alt="remember me" title="remember me"/>
 		<a href="javascript:;" onclick="jQuery('#jf').submit();"><spring:message code="button.login"/></a>
 		<input type="submit" class="hiddensubmit"/>
+		<div>login:a, pass:test</div>
 	</form>
 </security:authorize>
 </t:layout>
