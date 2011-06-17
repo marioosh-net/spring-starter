@@ -1,9 +1,13 @@
 package net.marioosh.gallery;
 
 import java.io.IOException;
+import javax.annotation.Resource;
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import net.marioosh.gallery.model.dao.PhotoDAO;
 import net.marioosh.gallery.model.entities.Photo;
+import org.apache.commons.io.IOUtils;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.annotation.Secured;
@@ -16,6 +20,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 import org.springframework.web.servlet.ModelAndView;
@@ -30,6 +35,9 @@ public class MainController {
 
 	@Autowired
 	private PhotoDAO photoDAO;
+	
+	@Autowired
+	private ServletContext servletContext;
 
 	/**
 	 * metoda poleci przy obsludze kazdego requesta, bo @ModelAttribute
@@ -76,6 +84,11 @@ public class MainController {
 		throw new NullPointerException("NullPointerException !!!");
 	}
 	
+	@RequestMapping("/json")
+	public @ResponseBody Photo getJSON() {
+		return new Photo();
+	}
+
 	/*
 	 * teraz jest ogolny: SimpleMappingExceptionResolver
 	 * 
