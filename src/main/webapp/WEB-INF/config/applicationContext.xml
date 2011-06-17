@@ -39,27 +39,58 @@
 
 	<!-- view resolver -->
 	<!-- dziala: np. simpleView -> /WEB-INF/pages/simpleView.jsp -->
-	<!-- jesli nie zdefiniujemy zadnego domyslny -> simply forwards to a URL matching the name of the view specified -->
+	<!-- jesli nie zdefiniujemy zadnego domyslny -> simply forwards to a URL matching the name of the view specified 
 	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
 		<property name="prefix" value="/WEB-INF/pages/" />
 		<property name="suffix" value=".jsp" />
-		<!-- dostep do springowych beanow bezposrednio z view np. ${mainController} -->
+		dostep do springowych beanow bezposrednio z view np. ${mainController}
 		<property name="exposeContextBeansAsAttributes" value="true"/>
 	</bean>
+	-->
+	<!-- view resolver -->
+	<!-- trzeba wylaczyc mvc:annotation-driven -->
+	<bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
+	  <property name="mediaTypes">
+	    <map>
+	      <entry key="json" value="application/json"/>
+	      <entry key="xml" value="application/xml"/>
+	    </map>
+	  </property>
+	  <property name="viewResolvers">
+	    <list>
+	      <bean class="org.springframework.web.servlet.view.BeanNameViewResolver"/>
+	      <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	        <property name="prefix" value="/WEB-INF/pages/"/>
+	        <property name="suffix" value=".jsp"/>
+	        <property name="exposeContextBeansAsAttributes" value="true"/>
+	      </bean>
+	    </list>
+	  </property>
+	  <property name="defaultViews">
+	    <list>
+	      <bean class="org.springframework.web.servlet.view.xml.MarshallingView">
+	      	<property name="marshaller">
+	      		<bean class="org.springframework.oxm.xstream.XStreamMarshaller"  p:autodetectAnnotations="true" />
+	      	</property>
+	      </bean>
+	      <bean class="org.springframework.web.servlet.view.json.MappingJacksonJsonView" />
+	    </list>
+	  </property>
+	</bean>
+	
 
 	<!-- JSR-303 Validator / Bean Validator -->
 	<!-- A JSR-303 provider, such as Hibernate Validator, is expected to be present in the classpath and will be detected automatically -->
 	<bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean"/>
 	<!-- wykryj automatycznie JSR-303 Provider'a np. hibernate validator'a i utworz validatora o nazwie "validator" -->
-	<mvc:annotation-driven />
+	<!-- <mvc:annotation-driven /> -->
 	
-	<!-- zamiast: <mvc:annotation-driven /> 
+	<!-- zamiast: <mvc:annotation-driven /> --> 
 	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter" />
 	<bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping" >
-		<property name="defaultHandler" value="..." />
+		<!-- <property name="defaultHandler" value="..." /> -->
 	</bean>
-	-->
 
 	<!-- message source -->
 	<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">

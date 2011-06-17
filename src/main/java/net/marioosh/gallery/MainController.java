@@ -89,6 +89,17 @@ public class MainController {
 		return new Photo();
 	}
 
+	@RequestMapping("/json.xml")
+	public @ResponseBody Photo getXml() {
+		return new Photo();
+	}
+	
+	@RequestMapping("/image")
+	public @ResponseBody byte[] getImage(HttpServletResponse r) throws IOException {
+		r.setContentType("image/gif");
+		return IOUtils.toByteArray(servletContext.getResourceAsStream("/images/ajax.gif"));
+	}
+	
 	/*
 	 * teraz jest ogolny: SimpleMappingExceptionResolver
 	 * 
