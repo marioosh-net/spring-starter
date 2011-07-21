@@ -435,7 +435,18 @@
 		    <version>3.1.0</version>
 		</dependency>
 		
-				
+		<!-- apache tiles -->
+		<dependency>
+			<groupId>org.apache.tiles</groupId>
+			<artifactId>tiles-jsp</artifactId>
+			<version>2.2.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.tiles</groupId>
+			<artifactId>tiles-template</artifactId>
+			<version>2.2.2</version>
+		</dependency>
+    				
 	</dependencies>
 
 </project>

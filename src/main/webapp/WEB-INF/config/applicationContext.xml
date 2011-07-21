@@ -39,14 +39,26 @@
 
 	<!-- view resolver -->
 	<!-- dziala: np. simpleView -> /WEB-INF/pages/simpleView.jsp -->
-	<!-- jesli nie zdefiniujemy zadnego domyslny -> simply forwards to a URL matching the name of the view specified --> 
-	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	<!-- jesli nie zdefiniujemy zadnego domyslny -> simply forwards to a URL matching the name of the view specified -->  
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver" p:order="1">
 		<property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
 		<property name="prefix" value="/WEB-INF/pages/" />
 		<property name="suffix" value=".jsp" />
-		<!-- dostep do springowych beanow bezposrednio z view np. ${mainController} -->
+		<!-- dostep do springowych beanow bezposrednio z view np. ${mainController} --> 
 		<property name="exposeContextBeansAsAttributes" value="true"/>
 	</bean>
+	
+	<bean id="tilesViewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver" p:order="0">
+  		<property name="viewClass" value="org.springframework.web.servlet.view.tiles2.TilesView"/>
+	</bean>
+    <bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles2.TilesConfigurer">
+    	<property name="definitions">
+			<list>
+				<value>/WEB-INF/defs/templates.xml</value>
+			</list>    	
+    	</property>
+    </bean>
+	
 
 	<!-- view resolver -->
 	<!-- trzeba wylaczyc mvc:annotation-driven 
