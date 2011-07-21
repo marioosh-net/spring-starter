@@ -3,13 +3,14 @@ package net.marioosh.springstarter.model.impl;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import javax.sql.DataSource;
 import net.marioosh.springstarter.model.dao.UserDAO;
 import net.marioosh.springstarter.model.entities.User;
+
 import org.apache.log4j.Logger;
+import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
-import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.GrantedAuthorityImpl;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -18,18 +19,13 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Repository;
 
 @Repository("userDAO")
-public class UserDAOImpl implements UserDAO, UserDetailsService {
+public class UserDAOImpl extends HibernateDaoSupport implements UserDAO, UserDetailsService {
 
 	private Logger log = Logger.getLogger(getClass());
-	private JdbcTemplate jdbcTemplate;
 
-	/**
-	 * @Autowired - autowired by Spring's dependency injection facilities
-	 *            dataSourca from matching bean in the Spring container
-	 */
 	@Autowired
-	public void setDataSource(DataSource dataSource) {
-		this.jdbcTemplate = new JdbcTemplate(dataSource);
+	public void init(SessionFactory factory) {
+	    setSessionFactory(factory);
 	}
 
 	@Override
