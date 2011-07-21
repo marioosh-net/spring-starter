@@ -60,11 +60,11 @@
 	<logger name="org.springframework">
 		<level value="error" />
 	</logger>
-	<logger name="net.marioosh.gallery.utils.WebUtils">
+	<logger name="net.marioosh.springstarter.utils.WebUtils">
 		<level value="info" />
 		<appender-ref ref="accesslog" />
 	</logger>	
-	<logger name="net.marioosh.gallery.FileService">
+	<logger name="net.marioosh.springstarter.FileService">
 		<level value="debug" />
 		<appender-ref ref="file_fileservice"/>
 	</logger>

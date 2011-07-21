@@ -30,7 +30,7 @@
 	<!-- ============================= -->
 	<!-- Auto-detecting components, dla wykrytych komponentow tworzone sa beany -->
 	<!-- bedziemy korzystac z adnotacji @Component, @Controller, @Repository, @Service ... -->
-	<context:component-scan base-package="net.marioosh.gallery" />
+	<context:component-scan base-package="net.marioosh.springstarter" />
 	
 	<!-- Activates various annotations to be detected in bean classes: Spring's @Required and @Autowired, as well 
  	as JSR 250's @PostConstruct, @PreDestroy and @Resource (if available), JAX-WS's @WebServiceRef (if available), EJB3's @EJB (if available), 

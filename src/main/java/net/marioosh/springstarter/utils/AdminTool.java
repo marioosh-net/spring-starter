@@ -1,17 +1,17 @@
-package net.marioosh.gallery.utils;
+package net.marioosh.springstarter.utils;
 
-import net.marioosh.gallery.MainController;
+import net.marioosh.springstarter.MainController;
 import org.apache.log4j.Logger;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  * odpalanie win32
- * 		java -cp *; net.marioosh.gallery.utils.AdminTool
- * 		java -cp target\gallery\WEB-INF\lib\*; net.marioosh.gallery.utils.AdminTool
- * 		java -cp target\gallery\WEB-INF\lib\*;c:\jsf\tomcat-6.0.26\lib\*; net.marioosh.gallery.utils.AdminTool
+ * 		java -cp *; net.marioosh.springstarter.utils.AdminTool
+ * 		java -cp target\gallery\WEB-INF\lib\*; net.marioosh.springstarter.utils.AdminTool
+ * 		java -cp target\gallery\WEB-INF\lib\*;c:\jsf\tomcat-6.0.26\lib\*; net.marioosh.springstarter.utils.AdminTool
  * 
  * odpalanie linux
- * 		java -cp target/gallery/WEB-INF/lib/*:/opt/tomcat7/lib/* net.marioosh.gallery.utils.AdminTool
+ * 		java -cp target/gallery/WEB-INF/lib/*:/opt/tomcat7/lib/* net.marioosh.springstarter.utils.AdminTool
  * 
  * @author marioosh
  *

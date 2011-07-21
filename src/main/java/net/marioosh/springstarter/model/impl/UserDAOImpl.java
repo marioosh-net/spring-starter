@@ -1,14 +1,14 @@
-package net.marioosh.gallery.model.impl;
+package net.marioosh.springstarter.model.impl;
 
 import java.util.ArrayList;
 import java.util.Collection;
+
 import javax.sql.DataSource;
-import net.marioosh.gallery.model.dao.UserDAO;
-import net.marioosh.gallery.model.entities.User;
+import net.marioosh.springstarter.model.dao.UserDAO;
+import net.marioosh.springstarter.model.entities.User;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
-import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.GrantedAuthorityImpl;

@@ -6,7 +6,7 @@
     start-state="one">
     
     <!-- flow scope variable -->
-	<var name="photo" class="net.marioosh.gallery.model.entities.Photo"/>
+	<var name="photo" class="net.marioosh.springstarter.model.entities.Photo"/>
 	
 	<input name="msg"/>
 	
@@ -34,10 +34,10 @@
 	<end-state id="home" view="externalRedirect:contextRelative:/app/home" />
 	<end-state id="home2" view="externalRedirect:contextRelative:/app/home/#{msg}" />
 	<end-state id="custom-handler">
-		<output name="outphoto" value="flowScope.photo" type="net.marioosh.gallery.model.entities.Photo"/>
+		<output name="outphoto" value="flowScope.photo" type="net.marioosh.springstarter.model.entities.Photo"/>
 	</end-state>
 	<end-state id="data" view="externalRedirect:contextRelative:/app/data" >
-		<output name="data" value="flowScope.photo" type="net.marioosh.gallery.model.entities.Photo"/>
+		<output name="data" value="flowScope.photo" type="net.marioosh.springstarter.model.entities.Photo"/>
 	</end-state>
 	
 	<end-state id="test2">

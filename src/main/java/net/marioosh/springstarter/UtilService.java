@@ -1,8 +1,8 @@
-package net.marioosh.gallery;
+package net.marioosh.springstarter;
 
 import java.io.File;
 import java.io.Serializable;
-import net.marioosh.gallery.model.dao.PhotoDAO;
+import net.marioosh.springstarter.model.dao.PhotoDAO;
 import org.apache.log4j.Logger;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;

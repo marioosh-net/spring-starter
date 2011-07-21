@@ -32,7 +32,7 @@
 	<logger name="org.springframework">
 		<level value="error" />
 	</logger>
-	<logger name="net.marioosh.gallery.FileService">
+	<logger name="net.marioosh.springstarter.FileService">
 		<level value="info" />
 		<appender-ref ref="file_all" />
 	</logger>

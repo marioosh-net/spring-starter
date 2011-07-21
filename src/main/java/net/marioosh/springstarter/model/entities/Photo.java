@@ -1,4 +1,4 @@
-package net.marioosh.gallery.model.entities;
+package net.marioosh.springstarter.model.entities;
 
 import java.io.Serializable;
 import org.hibernate.validator.constraints.NotEmpty;

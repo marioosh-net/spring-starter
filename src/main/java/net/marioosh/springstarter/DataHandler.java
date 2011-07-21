@@ -1,9 +1,9 @@
-package net.marioosh.gallery;
+package net.marioosh.springstarter;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import net.marioosh.springstarter.model.entities.Photo;
 import org.apache.log4j.Logger;
-import net.marioosh.gallery.model.entities.Photo;
 import org.springframework.stereotype.Component;
 import org.springframework.webflow.execution.FlowExecutionOutcome;
 import org.springframework.webflow.mvc.servlet.AbstractFlowHandler;

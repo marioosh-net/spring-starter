@@ -1,7 +1,6 @@
-package net.marioosh.gallery.utils;
+package net.marioosh.springstarter.utils;
 
 import javax.servlet.http.HttpServletRequest;
-import net.marioosh.gallery.DataHandler;
 import org.apache.log4j.Logger;
 import org.springframework.webflow.context.servlet.DefaultFlowUrlHandler;
 import org.springframework.webflow.core.collection.AttributeMap;

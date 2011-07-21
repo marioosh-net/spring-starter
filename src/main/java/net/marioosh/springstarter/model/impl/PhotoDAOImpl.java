@@ -1,7 +1,7 @@
-package net.marioosh.gallery.model.impl;
+package net.marioosh.springstarter.model.impl;
 
 import javax.sql.DataSource;
-import net.marioosh.gallery.model.dao.PhotoDAO;
+import net.marioosh.springstarter.model.dao.PhotoDAO;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;

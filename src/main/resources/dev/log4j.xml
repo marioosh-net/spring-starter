@@ -100,7 +100,7 @@
 	</logger>
 		
 	<!--
-	<logger name="net.marioosh.gallery.FileService">
+	<logger name="net.marioosh.springstarter.FileService">
 		<level value="debug" />
 		<appender-ref ref="file_fileservice"/>
 	</logger>
