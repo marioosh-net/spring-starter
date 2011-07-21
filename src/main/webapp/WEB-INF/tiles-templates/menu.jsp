@@ -1,4 +1,2 @@
-<ol>
-  <li>Foo</li>
-  <li>Bar</li>
-</ol>
+<a href="#">Foo menu</a>
+<a href="#">Bar menu</a>

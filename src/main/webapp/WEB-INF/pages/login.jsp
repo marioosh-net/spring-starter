@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="/WEB-INF/templates/taglibs.jsp" %>
-<t:layout>
+
 <security:authorize ifAnyGranted="ROLE_USER,ROLE_ADMIN">
 	<security:authentication property="principal.username" />&#160;<a href="<c:url value="/app/logout"/>"><spring:message code="button.logout"/></a>
 </security:authorize>
@@ -19,4 +19,3 @@
 		<div>login:a, pass:test</div>
 	</form>
 </security:authorize>
-</t:layout>

@@ -5,7 +5,7 @@
 <tiles-definitions>
 
 	<!-- Default Main Template -->
-	<definition name="base" template="/WEB-INF/tiles-templates/layout.jsp">
+	<definition name="baseLayout" template="/WEB-INF/tiles-templates/layout.jsp">
 		<put-attribute name="title" value="Empty" type="string" />
 		<put-attribute name="header" value="/WEB-INF/tiles-templates/header.jsp" />
 		<put-attribute name="footer" value="/WEB-INF/tiles-templates/footer.jsp" />
@@ -14,8 +14,20 @@
 	</definition>
 	
 	<!-- "name" musi sie zgadzac z nazwą view! -->
-	<definition name="tiles" extends="base">
+	<definition name="tiles" extends="baseLayout">
 		<put-attribute name="title" value="Simple Tiles 2 Example"/>
+	</definition>
+	
+	<definition name="index" extends="baseLayout">
+		<put-attribute name="body" value="/WEB-INF/pages/index.jsp"/>
+	</definition>
+	
+	<definition name="login" extends="baseLayout">
+		<put-attribute name="body" value="/WEB-INF/pages/login.jsp"/>
+	</definition>
+	
+	<definition name="form" extends="baseLayout">
+		<put-attribute name="body" value="/WEB-INF/pages/form.jsp"/>
 	</definition>
 	
 </tiles-definitions>

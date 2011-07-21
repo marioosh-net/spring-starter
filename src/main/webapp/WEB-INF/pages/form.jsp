@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="/WEB-INF/templates/taglibs.jsp" %>
-<t:layout>
+
 	NAME:${photo.name}<br/>
 	ID:${photo.id}
 	
@@ -9,4 +9,3 @@
 		<form:input path="name"/><form:errors path="name"/><br/>
 		<input type="submit" value="Submit"/>
 	</form:form>
-</t:layout>
