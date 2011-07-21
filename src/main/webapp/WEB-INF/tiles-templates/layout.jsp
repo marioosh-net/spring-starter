@@ -16,6 +16,10 @@
 </head>
 <body id="body">
 	<%-- <%@include file="/WEB-INF/templates/debug.jsp" %> --%>
+	
+	<!-- dodanie definicji bezposrednio -->
+	<tiles:insertDefinition name="logo"/>
+	
 	<div id="wrapper">	
 		<div id="main">
 		

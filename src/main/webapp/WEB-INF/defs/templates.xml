@@ -4,21 +4,29 @@
 
 <tiles-definitions>
 
-	<!-- Default Main Template -->
+	<!-- proste komponenty -->
+	<definition name="logo" template="/WEB-INF/tiles-templates/logo.jsp"/>
+	<definition name="menu" template="/WEB-INF/tiles-templates/menu.jsp"/>
+	
+	<!-- layout bazowy -->
 	<definition name="baseLayout" template="/WEB-INF/tiles-templates/layout.jsp">
 		<put-attribute name="subtitle" value="" type="string" />
 		<put-attribute name="header" value="/WEB-INF/tiles-templates/header.jsp" />
 		<put-attribute name="footer" value="/WEB-INF/tiles-templates/footer.jsp" />
 		<put-attribute name="body" value="/WEB-INF/tiles-templates/blank.jsp" />
-		<put-attribute name="menu" value="/WEB-INF/tiles-templates/menu.jsp" />
+		
+		<!-- definicje mogą być włączane do innych definicji jako atrybuty -->
+		<put-attribute name="menu" value="menu" />
 	</definition>
 	
 	<!-- "name" musi sie zgadzac z nazwą view! -->
 	<definition name="tiles" extends="baseLayout">
+		<!-- nadpisanie atrybutu 'subtitle' -->
 		<put-attribute name="subtitle" value="- Simple Tiles 2 Example"/>
 	</definition>
 	
 	<definition name="index" extends="baseLayout">
+		<!-- nadpisanie 'body' -->
 		<put-attribute name="body" value="/WEB-INF/pages/index.jsp"/>
 	</definition>
 	
@@ -32,4 +40,7 @@
 		<put-attribute name="subtitle" value=" - Form"/>
 	</definition>
 	
+	<definition name="404" template="/WEB-INF/pages/404.jsp">	
+		<put-attribute name="header" value="header"/>
+	</definition>
 </tiles-definitions>
