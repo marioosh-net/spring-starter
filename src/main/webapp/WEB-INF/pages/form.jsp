@@ -3,24 +3,28 @@
 
 	<h2>Add User</h2>
 	<form:form modelAttribute="user">
-		<spring:message code="label.login"/><form:input path="login"/><form:errors path="login"/><br/>
-		<spring:message code="label.password"/><form:password path="password"/><form:errors path="password"/><br/>
-		<spring:message code="label.email"/><form:input path="email" /><form:errors path="email"/><br/>
-		<spring:message code="label.firstname"/><form:input path="firstname" /><form:errors path="firstname"/><br/>
-		<spring:message code="label.lastname"/><form:input path="lastname" /><form:errors path="lastname"/><br/>
-		<spring:message code="label.telephone"/><form:input path="telephone" /><form:errors path="telephone"/><br/>
-		<spring:message code="label.date"/><form:input path="date" /><form:errors path="date"/><br/>
-		<input type="submit" value="Submit"/>
+		<t:input name="login"/>
+		<div class="fcell">
+			<div class="clabel"><spring:message code="label.password"/></div>
+			<div class="cdata"><form:password path="password"/></div>
+			<div class="cmsgs"><form:errors path="password"/></div>
+		</div>							
+		<t:input name="email"/>
+		<t:input name="firstname"/>
+		<t:input name="lastname"/>
+		<t:input name="telephone"/>
+		<t:input name="date"/>
+		<input type="submit" value='<spring:message code="button.ok"/>'/>
 	</form:form>
 	
 	<script>
-	jQuery("#id").mask("9?99999");
-	jQuery("#date").mask("9999-99-99");
+	jQuery("#telephone").mask("999 999 999");
+	jQuery("#date").mask("99.99.9999");
 	</script>
 	
 	<h2>Users</h2>
 	<ul>
 	<c:forEach items="${users}" var="user">
-		<li>${user.login}</li>
+		<li>${user.login}: ${user.firstname}: ${user.lastname}: ${user.email}: ${user.date}</li>
 	</c:forEach>
 	</ul>

@@ -30,7 +30,9 @@ form {
 	margin: 0px;
 	padding: 0px;
 }
-
+h2 {
+	margin-top: 15px;
+}
 /** layout **/
 #body {
 	text-align: center;
@@ -212,6 +214,10 @@ form {
 	color: #666;
 }
 .fcell div.cdata {
+	font-size: 12px;
+}
+.fcell div.cmsgs {
+	color: #f00;
 	font-size: 12px;
 }
 .sform .msg {

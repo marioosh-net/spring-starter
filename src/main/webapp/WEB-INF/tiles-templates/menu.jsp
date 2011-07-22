@@ -6,10 +6,6 @@
 </div>
 
 <div class="menu-item">
-	<a href="<c:url value="/app/test?msg=Hello Flow!"/>">WebFlow</a>
-</div>
-
-<div class="menu-item">
 	<a href="<c:url value="/app/form"/>">Form</a>
 </div>
 
@@ -21,6 +17,10 @@
 		<a href="<c:url value="/app/login"/>"><spring:message code="button.login"/></a>
 	</security:authorize>
 	<%-- <%@include file="/WEB-INF/templates/login.jsp" %> --%>
+</div>
+
+<div class="menu-item">
+	<a href="<c:url value="/app/test?msg=Hello Flow!"/>">To WebFlow</a>
 </div>
 	
 <div class="clear"></div>

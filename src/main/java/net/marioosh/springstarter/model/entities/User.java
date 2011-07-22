@@ -8,7 +8,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.validation.Valid;
 import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.NumberFormat;
+import org.springframework.format.annotation.NumberFormat.Style;
 
 @Entity
 @Table(name = "users")
@@ -28,8 +32,12 @@ public class User extends AbstractEntity implements Serializable {
 
 	private String lastname;
 
+	@Valid
+	@NumberFormat(style=Style.NUMBER, pattern="### ### ###")
 	private String telephone;
 
+	@Valid
+	@DateTimeFormat(pattern="dd.MM.yyyy")
 	private Date date;
 
 	@NotEmpty
