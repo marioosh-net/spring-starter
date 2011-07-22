@@ -68,6 +68,10 @@ form {
 /* header END */
 
 /* menu */
+.menu-item {
+	float: left;
+	margin-right: 15px;
+}
 #photos-header {
 	/*height: 25px;*/
 	margin: 3px;

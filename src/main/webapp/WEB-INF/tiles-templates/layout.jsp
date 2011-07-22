@@ -17,18 +17,19 @@
 <body id="body">
 	<%-- <%@include file="/WEB-INF/templates/debug.jsp" %> --%>
 	
-	<!-- dodanie definicji bezposrednio -->
-	<tiles:insertDefinition name="logo"/>
-	
 	<div id="wrapper">	
 		<div id="main">
 		
 		    <div id="header">
-		       <tiles:insertAttribute name="header" />
+		    	<div class="fixedwidth">
+		       		<tiles:insertAttribute name="header" />
+		       	</div>
 		    </div>
 		
 		    <div id="menu">
-		       <tiles:insertAttribute name="menu" />
+		    	<div class="fixedwidth">
+		       		<tiles:insertAttribute name="menu" />
+		       	</div>
 		    </div>    
 		
 			<div id="content">		
@@ -38,7 +39,9 @@
 			</div>
 
 			<div id="footer">
-				<tiles:insertAttribute name="footer" />
+				<div class="fixedwidth">
+					<tiles:insertAttribute name="footer" />
+				</div>
 			</div>
 			
 		</div>
