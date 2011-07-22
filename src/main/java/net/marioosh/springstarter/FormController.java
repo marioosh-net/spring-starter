@@ -24,6 +24,7 @@ public class FormController {
 	
 	@RequestMapping(value="/form", method=RequestMethod.GET)
 	public String form(Model model) {
+		log.debug("GET");
 		model.addAttribute("user", new User());
 		return "form";
 	}
@@ -31,6 +32,7 @@ public class FormController {
 	@RequestMapping(value="/form", method=RequestMethod.POST)
 	public String form(@Valid // bean validator 
 			@ModelAttribute User user, BindingResult result) {
+		log.debug("POST");
 		ValidationUtils.rejectIfEmpty(result, "id", "not.empty");
 		log.debug(user);
 		return "form";
