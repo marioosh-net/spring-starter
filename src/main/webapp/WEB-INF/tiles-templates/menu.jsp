@@ -6,15 +6,11 @@
 </div>
 
 <div class="menu-item">
-	<a href="<c:url value="/app/test?msg=Hello Flow!"/>">&raquo;&#160;WebFlow</a>
+	<a href="<c:url value="/app/test?msg=Hello Flow!"/>">WebFlow</a>
 </div>
 
 <div class="menu-item">
-	<a href="<c:url value="/app/form"/>">&raquo;&#160;Form</a>
-</div>
-
-<div class="menu-item">
-	<a href="<c:url value="/app/tiles"/>">Clean Tiles Example</a>
+	<a href="<c:url value="/app/form"/>">Form</a>
 </div>
 
 <div class="menu-item">

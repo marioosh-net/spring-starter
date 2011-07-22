@@ -180,7 +180,7 @@
 	<!-- postgresql / localhost -->
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
 		<property name="driverClassName" value="org.postgresql.Driver" />
-		<property name="url" value="jdbc:postgresql://localhost:5432/springonly2?charSet=UTF-8" />
+		<property name="url" value="jdbc:postgresql://localhost:5432/springonly?charSet=UTF-8" />
 		<property name="username" value="springonly" />
 		<property name="password" value="springonly" />
 	</bean>
