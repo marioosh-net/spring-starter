@@ -370,7 +370,7 @@
 		<dependency>
 			<groupId>org.opensymphony.quartz</groupId>
 			<artifactId>quartz</artifactId>
-			<version>1.6.5</version>
+			<version>1.6.1</version>
 		</dependency>
 		
 		<!-- html parser -->
