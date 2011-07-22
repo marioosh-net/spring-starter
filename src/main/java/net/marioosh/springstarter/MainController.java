@@ -29,9 +29,6 @@ public class MainController {
 	private Logger log = Logger.getLogger(MainController.class);
 
 	@Autowired
-	private Validator validator;
-
-	@Autowired
 	private UserDAO userDAO;
 	
 	@Autowired
