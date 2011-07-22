@@ -8,6 +8,7 @@
 	<script type="text/javascript">	var context = '<c:url value="/app/"/>'; if(context == '/') {context = '';}</script>
 	<%-- jQuery Library + ALL jQuery Tools --%>
 	<script type="text/javascript" src="<c:url value="/js/jquery.tools.min.js"/>"></script>
+	<script type="text/javascript" src="<c:url value="/js/jquery.maskedinput-1.3.min.js"/>"></script>
 	<script type="text/javascript">jQuery.noConflict();</script>
 		
 	<script type="text/javascript" src="<c:url value="/js/main.js"/>"></script>

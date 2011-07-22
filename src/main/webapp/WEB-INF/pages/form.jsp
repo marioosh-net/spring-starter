@@ -9,3 +9,7 @@
 		<form:input path="name"/><form:errors path="name"/><br/>
 		<input type="submit" value="Submit"/>
 	</form:form>
+	
+	<script>
+	jQuery("#id").mask("9?99999")
+	</script>
