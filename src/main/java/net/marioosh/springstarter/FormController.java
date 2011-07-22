@@ -17,11 +17,6 @@ public class FormController {
 	
 	private Logger log = Logger.getLogger(FormController.class);
 	
-	/*
-	@Autowired
-	private Validator validator;
-	*/
-	
 	@RequestMapping(value="/form", method=RequestMethod.GET)
 	public String form(Model model) {
 		log.debug("GET");
