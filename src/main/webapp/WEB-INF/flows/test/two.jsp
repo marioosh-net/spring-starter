@@ -2,7 +2,7 @@
 <%@ include file="/WEB-INF/templates/taglibs.jsp" %>
 <t:layout>
 	Page 2<br/>
-	photo.name:${photo.name}<br/>
+	user.login:${user.login}<br/>
 	<a href="${flowExecutionUrl}&_eventId=one">One</a><br/>
 	<a href="${flowExecutionUrl}&_eventId=home">&raquo;&#160;MVC</a>
 </t:layout> 

@@ -2,7 +2,8 @@ package net.marioosh.springstarter;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import net.marioosh.springstarter.model.entities.Photo;
+import net.marioosh.springstarter.model.entities.User;
+
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Component;
 import org.springframework.webflow.execution.FlowExecutionOutcome;
@@ -24,7 +25,7 @@ public class DataHandler extends AbstractFlowHandler {
 	public String handleExecutionOutcome(FlowExecutionOutcome outcome,
 			HttpServletRequest request, HttpServletResponse response) {
 		log.debug(outcome.getId());
-		Photo photo = (Photo)outcome.getOutput().get("outphoto");
+		User user = (User)outcome.getOutput().get("outuser");
 
 		return "/home";
 	}

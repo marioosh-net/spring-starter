@@ -5,8 +5,8 @@ import java.io.IOException;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import net.marioosh.springstarter.model.dao.PhotoDAO;
-import net.marioosh.springstarter.model.entities.Photo;
+import net.marioosh.springstarter.model.dao.UserDAO;
+import net.marioosh.springstarter.model.entities.User;
 import org.apache.commons.io.IOUtils;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,7 +32,7 @@ public class MainController {
 	private Validator validator;
 
 	@Autowired
-	private PhotoDAO photoDAO;
+	private UserDAO userDAO;
 	
 	@Autowired
 	private ServletContext servletContext;
@@ -51,7 +51,7 @@ public class MainController {
 	}
 
 	@RequestMapping(value="/data", method=RequestMethod.POST)
-	public String getData(@RequestParam Photo data) {
+	public String getData(@RequestParam User data) {
 		return "index";
 	}
 	
@@ -83,13 +83,13 @@ public class MainController {
 	}
 	
 	@RequestMapping("/json")
-	public @ResponseBody Photo getJSON() {
-		return new Photo();
+	public @ResponseBody User getJSON() {
+		return new User();
 	}
 
 	@RequestMapping("/json.xml")
-	public @ResponseBody Photo getXml() {
-		return new Photo();
+	public @ResponseBody User getXml() {
+		return new User();
 	}
 	
 	/**

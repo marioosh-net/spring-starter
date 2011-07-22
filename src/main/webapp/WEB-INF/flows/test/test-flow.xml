@@ -6,14 +6,14 @@
     start-state="one">
     
     <!-- flow scope variable -->
-	<var name="photo" class="net.marioosh.springstarter.model.entities.Photo"/>
+	<var name="user" class="net.marioosh.springstarter.model.entities.User"/>
 	
 	<input name="msg"/>
 	
 	<view-state id="one">
 		<on-entry>
 			<set name="viewScope.helloMessage" value="msg"></set>
-			<evaluate expression="photo.setName(photo.getName()+'one;')"/>
+			<evaluate expression="user.setLogin(user.getLogin()+'one;')"/>
 		</on-entry>
 		<transition on="two" to="two"/>
 		<transition on="home" to="home"/>
@@ -25,7 +25,7 @@
 	
 	<view-state id="two">
 		<on-entry>
-			<evaluate expression="photo.setName(photo.getName()+'two;')"/>
+			<evaluate expression="user.setLogin(user.getLogin()+'two;')"/>
 		</on-entry>
 		<transition on="one" to="one"/>
 		<transition on="home" to="home"/>
@@ -34,10 +34,10 @@
 	<end-state id="home" view="externalRedirect:contextRelative:/app/home" />
 	<end-state id="home2" view="externalRedirect:contextRelative:/app/home/#{msg}" />
 	<end-state id="custom-handler">
-		<output name="outphoto" value="flowScope.photo" type="net.marioosh.springstarter.model.entities.Photo"/>
+		<output name="outuser" value="flowScope.user" type="net.marioosh.springstarter.model.entities.User"/>
 	</end-state>
 	<end-state id="data" view="externalRedirect:contextRelative:/app/data" >
-		<output name="data" value="flowScope.photo" type="net.marioosh.springstarter.model.entities.Photo"/>
+		<output name="data" value="flowScope.user" type="net.marioosh.springstarter.model.entities.User"/>
 	</end-state>
 	
 	<end-state id="test2">

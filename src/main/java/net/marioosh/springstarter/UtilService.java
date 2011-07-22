@@ -2,7 +2,7 @@ package net.marioosh.springstarter;
 
 import java.io.File;
 import java.io.Serializable;
-import net.marioosh.springstarter.model.dao.PhotoDAO;
+import net.marioosh.springstarter.model.dao.UserDAO;
 import org.apache.log4j.Logger;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +20,7 @@ public class UtilService implements Serializable, ApplicationContextAware {
 	private ApplicationContext appContext;
 
 	@Autowired
-	private PhotoDAO photoDAO;
+	private UserDAO userDAO;
 
 	@Override
 	public void setApplicationContext(ApplicationContext appContext)
