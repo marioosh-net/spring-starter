@@ -64,7 +64,7 @@ public class FormController {
 		}
 		
 		userDAO.add(user);
-		return "redirect:/app/form";
+		return "redirect:/form";
 	}
 
 }

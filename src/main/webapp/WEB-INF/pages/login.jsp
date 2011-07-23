@@ -3,7 +3,7 @@
 
 <h2>Login</h2>
 <security:authorize ifAnyGranted="ROLE_USER,ROLE_ADMIN">
-	<security:authentication property="principal.username" />&#160;<a href="<c:url value="/app/logout"/>"><spring:message code="button.logout"/></a>
+	<security:authentication property="principal.username" />&#160;<a href="<c:url value="/logout"/>"><spring:message code="button.logout"/></a>
 </security:authorize>
 <security:authorize ifNotGranted="ROLE_USER,ROLE_ADMIN">
 	<form class="sform" id="jf" name="f" action="<c:url value="/j_spring_security_check"/>" method="post">

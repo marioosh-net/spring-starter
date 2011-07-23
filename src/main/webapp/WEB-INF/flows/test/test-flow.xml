@@ -31,12 +31,12 @@
 		<transition on="home" to="home"/>
 	</view-state>
 	
-	<end-state id="home" view="externalRedirect:contextRelative:/app/home" />
-	<end-state id="home2" view="externalRedirect:contextRelative:/app/home/#{msg}" />
+	<end-state id="home" view="externalRedirect:contextRelative:/home" />
+	<end-state id="home2" view="externalRedirect:contextRelative:/home/#{msg}" />
 	<end-state id="custom-handler">
 		<output name="outuser" value="flowScope.user" type="net.marioosh.springstarter.model.entities.User"/>
 	</end-state>
-	<end-state id="data" view="externalRedirect:contextRelative:/app/data" >
+	<end-state id="data" view="externalRedirect:contextRelative:/data" >
 		<output name="data" value="flowScope.user" type="net.marioosh.springstarter.model.entities.User"/>
 	</end-state>
 	

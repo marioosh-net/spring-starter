@@ -83,9 +83,9 @@
 	<security:global-method-security secured-annotations="enabled" pre-post-annotations="enabled" />
 	
 	<!-- simple controllers -->
-	<mvc:view-controller path="/404.html" view-name="404"/>
-	<mvc:view-controller path="/403.html" view-name="403"/>
-	<mvc:view-controller path="/error.html" view-name="error"/>
+	<mvc:view-controller path="/404" view-name="404"/>
+	<mvc:view-controller path="/403" view-name="403"/>
+	<mvc:view-controller path="/error" view-name="error"/>
 	
 	<!-- static resources -->
 	<mvc:resources mapping="/r/**" location="/WEB-INF"/>

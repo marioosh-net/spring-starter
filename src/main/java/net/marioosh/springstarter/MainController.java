@@ -55,7 +55,7 @@ public class MainController {
 		return "index";
 	}
 	
-	@RequestMapping(value={"/home", "/"})
+	@RequestMapping(value={"/home"})
 	public String index() {
 		return "index";
 	}

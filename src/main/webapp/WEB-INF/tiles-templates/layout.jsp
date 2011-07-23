@@ -5,14 +5,18 @@
 	<meta name="description" content="" />
 	<meta name="Keywords" lang="pl" content="">
 	<meta name="Keywords" lang="en" content="">
-	<script type="text/javascript">	var context = '<c:url value="/app/"/>'; if(context == '/') {context = '';}</script>
+	<script type="text/javascript">	
+		var context = '<c:url value="/"/>'; 
+		if(context == '/') {
+			context = '';
+		}
+	</script>
 	<%-- jQuery Library + ALL jQuery Tools --%>
-	<script type="text/javascript" src="<c:url value="/js/jquery.tools.min.js"/>"></script>
-	<script type="text/javascript" src="<c:url value="/js/jquery.maskedinput-1.3.min.js"/>"></script>
+	<script type="text/javascript" src="<c:url value="/r/js/jquery.tools.min.js"/>"></script>
+	<script type="text/javascript" src="<c:url value="/r/js/jquery.maskedinput-1.3.min.js"/>"></script>
 	<script type="text/javascript">jQuery.noConflict();</script>
-		
-	<script type="text/javascript" src="<c:url value="/js/main.js"/>"></script>
-	<link rel="stylesheet" type="text/css" href="<c:url value="/css/main.css"/>" media="screen">
+	<script type="text/javascript" src="<c:url value="/r/js/main.js"/>"></script>
+	<link rel="stylesheet" type="text/css" href="<c:url value="/r/css/main.css"/>" media="screen">
 	<title><spring:message code="label.appname"/><tiles:getAsString name="subtitle" /></title>
 </head>
 <body id="body">
