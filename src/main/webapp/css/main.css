@@ -67,9 +67,8 @@ body,html {
 }
 
 #header {
-	background-color: #000;
-	color: #fff;
 	height: 40px; /* header height */
+	border-bottom: 1px solid #000;
 }
 
 #main {
@@ -88,9 +87,8 @@ body,html {
 }
 
 #footer {
+	border-top: 1px solid #000;
 	clear: both;
-	background-color: #444;
-	color: #fff;
 }
 
 #push,#footer {
