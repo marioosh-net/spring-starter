@@ -2,7 +2,7 @@
 <%@ include file="/WEB-INF/templates/taglibs.jsp" %>
 	
 <h2>
-	HOME PAGE
+	Home Page
 </h2>
 <div style="margin: 20px;">
 	<spring:message code="hello"/><br/>${msg}
