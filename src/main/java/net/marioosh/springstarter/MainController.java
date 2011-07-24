@@ -83,8 +83,8 @@ public class MainController {
 	}
 	
 	@RequestMapping("/json")
-	public @ResponseBody User getJSON() {
-		return new User();
+	public @ResponseBody User getJSON(@RequestParam Long id) {
+		return userDAO.get(id);
 	}
 		
 	@RequestMapping("/image")

@@ -7,13 +7,14 @@
     
     <!-- flow scope variable -->
 	<var name="user" class="net.marioosh.springstarter.model.entities.User"/>
+	<var name="string" class="java.lang.String"/>
 	
 	<input name="msg"/>
 	
 	<view-state id="one">
 		<on-entry>
-			<set name="viewScope.helloMessage" value="msg"></set>
 			<evaluate expression="user.setLogin(user.getLogin()+'one;')"/>
+			<evaluate expression="string + 'one; '"/>
 		</on-entry>
 		<transition on="two" to="two"/>
 		<transition on="home" to="home"/>
@@ -26,6 +27,7 @@
 	<view-state id="two">
 		<on-entry>
 			<evaluate expression="user.setLogin(user.getLogin()+'two;')"/>
+			<evaluate expression="string + 'two; '"/>
 		</on-entry>
 		<transition on="one" to="one"/>
 		<transition on="home" to="home"/>

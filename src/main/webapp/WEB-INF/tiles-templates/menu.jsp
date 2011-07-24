@@ -10,7 +10,7 @@
 </div>
 
 <div class="menu-item">
-	<a href="<c:url value="/test?msg=Message from WebFlow!"/>">To WebFlow</a>
+	<a href="<c:url value="/test?msg=Input Message to WebFlow!"/>">To WebFlow</a>
 </div>
 
 <div class=" right">

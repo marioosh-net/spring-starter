@@ -28,7 +28,7 @@
 		<h2>Users</h2>
 		<ul>
 		<c:forEach items="${users}" var="user">
-			<li>${user.login}: ${user.firstname}: ${user.lastname}: ${user.email}: <fmt:formatDate value="${user.date}" pattern="dd.MM.yyyy"/>: <a href="<c:url value="json"/>">json</a></li>
+			<li>${user.login}: ${user.firstname}: ${user.lastname}: ${user.email}: <fmt:formatDate value="${user.date}" pattern="dd.MM.yyyy"/>: <a href="<c:url value="json?id=${user.id}"/>">json</a></li>
 		</c:forEach>
 		</ul>
 	</div>
