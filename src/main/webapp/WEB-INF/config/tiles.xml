@@ -7,6 +7,7 @@
 	<!-- proste komponenty -->
 	<definition name="logo" template="/WEB-INF/tiles-templates/logo.jsp"/>
 	<definition name="menu" template="/WEB-INF/tiles-templates/menu.jsp"/>
+	<definition name="debug" template="/WEB-INF/tiles-templates/debug.jsp"/>
 	
 	<!-- layout bazowy -->
 	<definition name="baseLayout" template="/WEB-INF/tiles-templates/layout.jsp">

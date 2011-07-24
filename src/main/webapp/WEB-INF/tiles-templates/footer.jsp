@@ -1,1 +1,2 @@
-<h2>Footer go here</h2>
+<%@ include file="/WEB-INF/templates/taglibs.jsp" %>
+FOOTER HERE

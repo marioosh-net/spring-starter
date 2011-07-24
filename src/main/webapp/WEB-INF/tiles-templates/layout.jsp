@@ -20,36 +20,35 @@
 	<title><spring:message code="label.appname"/><tiles:getAsString name="subtitle" /></title>
 </head>
 <body id="body">
-	<%-- <%@include file="/WEB-INF/templates/debug.jsp" %> --%>
 	
-	<div id="wrapper">	
-		<div id="main">
-		
-		    <div id="header">
-		    	<div class="fixedwidth">
-		       		<tiles:insertAttribute name="header" />
-		       	</div>
-		    </div>
-		
-		    <div id="menu">
-		    	<div class="fixedwidth">
-		       		<tiles:insertAttribute name="menu" />
-		       	</div>
-		    </div>    
-		
-			<div id="content">		
-				<div class="fixedwidth">
-					<tiles:insertAttribute name="body" />
-				</div>
-			</div>
-
-			<div id="footer">
-				<div class="fixedwidth">
-					<tiles:insertAttribute name="footer" />
-				</div>
-			</div>
+	<div id="wrapper"> 
+		<div id="header"> 
+			<div class="fixedwidth"> 
+				<tiles:insertAttribute name="header" />
+			</div>		
+		</div> 
+	
+		<div id="main"> 
+			<div id="menu"> 
+				<div class="fixedwidth"> 
+					<tiles:insertAttribute name="menu" />
+				</div> 
+			</div> 
 			
-		</div>
+			<div id="content">		
+				<div class="fixedwidth"> 
+					<tiles:insertAttribute name="body" />
+				</div> 
+			</div> 
+		</div> 
+        <div id="push"></div> 
+	</div> 
+	
+	<div id="footer"> 
+		<div class="fixedwidth"> 
+			<tiles:insertAttribute name="footer" />
+		</div> 
 	</div>
+		
 </body>
 </html>

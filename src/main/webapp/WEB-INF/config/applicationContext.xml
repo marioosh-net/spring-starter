@@ -28,18 +28,44 @@
 	<!-- ============================= -->
 	<!-- Spring MVC                    -->
 	<!-- ============================= -->
-	<!-- Auto-detecting components, dla wykrytych komponentow tworzone sa beany -->
-	<!-- bedziemy korzystac z adnotacji @Component, @Controller, @Repository, @Service ... -->
-	<context:component-scan base-package="net.marioosh.springstarter" />
-	
-	<!-- Activates various annotations to be detected in bean classes: Spring's @Required and @Autowired, as well 
- 	as JSR 250's @PostConstruct, @PreDestroy and @Resource (if available), JAX-WS's @WebServiceRef (if available), EJB3's @EJB (if available), 
- 	and JPA's @PersistenceContext and @PersistenceUnit (if available).  -->
-	<context:annotation-config />
 
+	<!-- Scans the classpath of this application for @Components to deploy as beans -->
+	<context:component-scan base-package="net.marioosh.springstarter" />
+
+	<!-- Configures the @Controller programming model -->
+	<mvc:annotation-driven />
+
+	<!-- Forwards requests to the "/" resource to the "index" view -->
+	<mvc:view-controller path="/" view-name="index"/>	
+	<!-- simple controllers -->
+	<mvc:view-controller path="/404" view-name="404"/>
+	<mvc:view-controller path="/403" view-name="403"/>
+	<mvc:view-controller path="/500" view-name="500"/>
+	<mvc:view-controller path="/error" view-name="error"/>
+	<mvc:view-controller path="/login" view-name="login"/>	
+
+	<!-- Configures Handler Interceptors -->	
+	<mvc:interceptors>
+		<!-- Changes the locale when a 'locale' request parameter is sent; e.g. /?locale=de -->
+		<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor" p:paramName="lang" />
+	</mvc:interceptors>
+
+	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources/ directory -->
+	<mvc:resources mapping="/r/**" location="/WEB-INF"/>
+
+	<!-- Saves a locale change using a cookie -->
+	<bean id="localeResolver" class="org.springframework.web.servlet.i18n.CookieLocaleResolver" />
+
+	<!-- Application Message Bundle -->
+	<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<property name="basename" value="WEB-INF/messages/messages" />
+		<property name="cacheSeconds" value="0"/>		
+		<property name="defaultEncoding" value="UTF-8"/>
+		<property name="useCodeAsDefaultMessage" value="true"/>
+	</bean>
+	
 	<!-- view resolver -->
-	<!-- dziala: np. simpleView -> /WEB-INF/pages/simpleView.jsp -->
-	<!-- jesli nie zdefiniujemy zadnego domyslny -> simply forwards to a URL matching the name of the view specified -->  
+	<!-- Resolves view names to protected .jsp resources within the /WEB-INF/pages directory -->
 	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver" p:order="1">
 		<property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
 		<property name="prefix" value="/WEB-INF/pages/" />
@@ -47,7 +73,7 @@
 		<!-- dostep do springowych beanow bezposrednio z view np. ${mainController} --> 
 		<property name="exposeContextBeansAsAttributes" value="true"/>
 	</bean>
-	
+	<!-- Apache Tiles resolver -->	
 	<bean id="tilesViewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver" p:order="0">
   		<property name="viewClass" value="org.springframework.web.servlet.view.tiles2.TilesView"/>
 	</bean>
@@ -58,103 +84,15 @@
 			</list>    	
     	</property>
     </bean>
-	
-
-	<!-- view resolver -->
-	<!-- trzeba wylaczyc mvc:annotation-driven 
-	<bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
-	  <property name="mediaTypes">
-	    <map>
-	      <entry key="json" value="application/json"/>
-	      <entry key="xml" value="application/xml"/>
-	    </map>
-	  </property>
-	  <property name="viewResolvers">
-	    <list>
-	      <bean class="org.springframework.web.servlet.view.BeanNameViewResolver"/>
-	      <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-	        <property name="prefix" value="/WEB-INF/pages/"/>
-	        <property name="suffix" value=".jsp"/>
-	        <property name="exposeContextBeansAsAttributes" value="true"/>
-	      </bean>
-	    </list>
-	  </property>
-	  <property name="defaultViews">
-	    <list>
-	      <bean class="org.springframework.web.servlet.view.xml.MarshallingView">
-	      	<property name="marshaller">
-	      		<bean class="org.springframework.oxm.xstream.XStreamMarshaller"  p:autodetectAnnotations="true" />
-	      	</property>
-	      </bean>
-	      <bean class="org.springframework.web.servlet.view.json.MappingJacksonJsonView" />
-	    </list>
-	  </property>
-	</bean>
-	-->
-	
-
-	<!-- JSR-303 Validator / Bean Validator -->
-	<!-- A JSR-303 provider, such as Hibernate Validator, is expected to be present in the classpath and will be detected automatically -->
-	<bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean"/>
-	<!-- wykryj automatycznie JSR-303 Provider'a np. hibernate validator'a i utworz validatora o nazwie "validator" -->
-	<mvc:annotation-driven />
-	
-	<!-- zamiast: <mvc:annotation-driven /> --> 
-	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter" />
-	<bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping" >
-		<!-- <property name="defaultHandler" value="..." /> -->
-	</bean>
-
-	<!-- message source -->
-	<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
-		<property name="basename" value="WEB-INF/messages/messages" />
-		<property name="defaultEncoding" value="UTF-8"/>
-		<property name="cacheSeconds" value="1"/>
-		<property name="useCodeAsDefaultMessage" value="true"/>
-	</bean>
 		
-	<!-- i18n -->
-	<mvc:interceptors>    
-    	<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor" p:paramName="lang"/>
-	</mvc:interceptors>
-	<bean id="localeResolver" class="org.springframework.web.servlet.i18n.CookieLocaleResolver" p:defaultLocale="pl"/>
-
-	<!-- teraz dziala adnotacja @Secured i @PreAuthorize -->
+	<!-- Activates various annotations to be detected in bean classes: Spring's @Required and @Autowired, as well 
+ 	as JSR 250's @PostConstruct, @PreDestroy and @Resource (if available), JAX-WS's @WebServiceRef (if available), EJB3's @EJB (if available), 
+ 	and JPA's @PersistenceContext and @PersistenceUnit (if available).  -->
+	<context:annotation-config />
+			
+	<!-- adnotacje @Secured i @PreAuthorize -->
 	<security:global-method-security secured-annotations="enabled" pre-post-annotations="enabled" />
-	
-	<!-- simple controllers -->
-	<mvc:view-controller path="/404" view-name="404"/>
-	<mvc:view-controller path="/403" view-name="403"/>
-	<mvc:view-controller path="/500" view-name="500"/>
-	<mvc:view-controller path="/error" view-name="error"/>
-	<mvc:view-controller path="/login" view-name="login"/>
-	
-	<!-- Forwards requests to the "/" resource to the "home" view -->
-	<mvc:view-controller path="/" view-name="index"/>	
-	
-	<!-- static resources -->
-	<mvc:resources mapping="/r/**" location="/WEB-INF"/>
-
-	<!-- scheduler
-	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
-		<property name="triggers">
-	        <list>
-				<bean id="scanTrigger" class="org.springframework.scheduling.quartz.SimpleTriggerBean">
-				    <property name="jobDetail">
-						<bean class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
-						  <property name="targetObject" ref="fileService" />
-						  <property name="targetMethod" value="scan" />
-						  <property name="concurrent" value="false" />
-						</bean>	
-				    </property>
-				    <property name="startDelay" value="10000" />
-				    <property name="repeatInterval" value="30000" />
-				</bean>
-	        </list>			
-		</property>
-	</bean>
-	-->
-	
+			
 	<!-- jawnie zdefiniowany, zeby ustawic order i zeby dzialaly w pierwszej kolejnosci adnotacje @ExceptionHandler -->
 	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerExceptionResolver" p:order="0"/>
 	<!-- exception handler, zamiast @ExceptionHandler -->
@@ -171,10 +109,12 @@
 		</property>
 	</bean> 
 	
+	
 	<!-- ============================= -->
 	<!-- Spring Web Flow --> 
 	<!-- ============================= -->
 	<import resource="flowConfig.xml" />
+
 
 	<!-- ============================= -->
 	<!-- Data Access                   -->
@@ -208,17 +148,6 @@
 	<!-- ============================= -->
 	<!-- Spring Security               -->
 	<!-- ============================= -->
-	<!-- tego chyba nie musi byc... 
-	<bean id="authenticationManager" class="org.springframework.security.authentication.ProviderManager">
-		<property name="providers">
-			<list>
-				<bean class="org.springframework.security.authentication.dao.DaoAuthenticationProvider">
-					<property name="userDetailsService" ref="userDAO" />
-				</bean>
-			</list>
-		</property>
-	</bean>
-	-->
 	<!-- disable-url-rewriting="true" - prevent appending ;jsessionid=XXX to urls -->
 	<security:http auto-config="true" use-expressions="true" disable-url-rewriting="true">
 		<security:form-login authentication-failure-url="/login?loginfail=1" login-page="/home" />

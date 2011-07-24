@@ -86,21 +86,7 @@ public class MainController {
 	public @ResponseBody User getJSON() {
 		return new User();
 	}
-
-	@RequestMapping("/json.xml")
-	public @ResponseBody User getXml() {
-		return new User();
-	}
-	
-	/**
-	 * view zbudowane na Tiles 2
-	 * @return
-	 */
-	@RequestMapping("/tiles")
-	public String tiles() {
-		return "tiles";
-	}
-	
+		
 	@RequestMapping("/image")
 	public @ResponseBody byte[] getImage(HttpServletResponse r) throws IOException {
 		r.setContentType("image/gif");
