@@ -48,7 +48,7 @@ public class FormController {
 	public String form(/* bean validator */ @Valid @ModelAttribute User user, BindingResult result) {
 		
 		// 1
-		ValidationUtils.rejectIfEmpty(result, "firstname", "not.empty");		
+		ValidationUtils.rejectIfEmpty(result, "firstname", "notEmpty");		
 		// 2
 		if(userDAO.getByLogin(user.getLogin()) != null) {
 			result.rejectValue("login", "loginEexist");
