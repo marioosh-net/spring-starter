@@ -3,7 +3,7 @@
     <wb-module deploy-name="springonly-starter">
       <wb-resource deploy-path="/" source-path="/src/main/webapp"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
-        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources/prod"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources/dev"/>
         <property name="context-root" value="springonly-starter"/>
         <property name="java-output-path" value="/springonly-starter/target/classes"/>
     </wb-module>
