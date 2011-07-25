@@ -26,47 +26,11 @@
 			<param name="ConversionPattern" value="%d %-5p %c{2} - %m%n" />
 		</layout>
 	</appender>
-
-	<!-- wyjscie do pliku loga -->
-	<appender name="file_fileservice" class="org.apache.log4j.DailyRollingFileAppender">
-		<!-- sciezka do pliku loga -->
-		<param name="File" value="${catalina.home}/logs/gallery_fileservice.log" />
-		<!-- dodawaj do pliku (przeciwienstwo: truncate) -->
-		<param name="Append" value="true" />
-		<!-- Rollover at midnight each day -->
-		<param name="DatePattern" value="'.'yyyy-MM-dd" />
-		<!-- format -->
-		<layout class="org.apache.log4j.PatternLayout">
-			<param name="ConversionPattern" value="%d %-5p %c{2} - %m%n" />
-		</layout>
-	</appender>
-	
-	<!-- access log -->
-	<appender name="accesslog" class="org.apache.log4j.DailyRollingFileAppender">
-		<!-- sciezka do pliku loga -->
-		<param name="File" value="${catalina.home}/logs/gallery_access.log" />
-		<!-- dodawaj do pliku (przeciwienstwo: truncate) -->
-		<param name="Append" value="true" />
-		<!-- Rollover at midnight each day -->
-		<param name="DatePattern" value="'.'yyyy-MM-dd" />
-		<!-- format -->
-		<layout class="org.apache.log4j.PatternLayout">
-			<param name="ConversionPattern" value="%d %-5p %c{2} - %m%n" />
-		</layout>
-	</appender>	
 	<!-- APPENDERY END -->
 
 	<!-- LOGGERY -->
 	<logger name="org.springframework">
 		<level value="error" />
-	</logger>
-	<logger name="net.marioosh.springstarter.utils.WebUtils">
-		<level value="info" />
-		<appender-ref ref="accesslog" />
-	</logger>	
-	<logger name="net.marioosh.springstarter.FileService">
-		<level value="debug" />
-		<appender-ref ref="file_fileservice"/>
 	</logger>
 	<!-- LOGGERY END -->
 
