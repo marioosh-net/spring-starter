@@ -17,17 +17,17 @@ import org.springframework.webflow.mvc.servlet.AbstractFlowHandler;
  *
  */
 @Component("test")
-public class DataHandler extends AbstractFlowHandler {
+public class TestFlowHandler extends AbstractFlowHandler {
 	
-	private Logger log = Logger.getLogger(DataHandler.class);
+	private Logger log = Logger.getLogger(TestFlowHandler.class);
 	
 	@Override
 	public String handleExecutionOutcome(FlowExecutionOutcome outcome,
 			HttpServletRequest request, HttpServletResponse response) {
-		log.debug(outcome.getId());
-		User user = (User)outcome.getOutput().get("outuser");
+		log.debug("OUTCOME ID: " + outcome.getId());
 		
-		log.debug(outcome.getOutput().get("id"));
+		// tutaj mozna zlapac to co jest w <output .../> przy <end-state>
+		log.debug(outcome.getOutput().get("output"));
 
 		return "/home";
 	}

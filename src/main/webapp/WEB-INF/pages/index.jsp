@@ -5,6 +5,7 @@
 	Home Page
 </h2>
 <div style="margin: 20px;">
-	<spring:message code="hello"/><br/>${msg}
+	<spring:message code="hello"/>
+	<c:if test="${not empty msg}"><br/>msg: ${msg}</c:if>
 </div>
 

@@ -5,4 +5,4 @@
 	<span> ${msg}</span><br/>
 	flow variable:${user.login}<br/>
 	<a href="${flowExecutionUrl}&_eventId=one">Page 1</a><br/><br/>
-	<a href="${flowExecutionUrl}&_eventId=home">&raquo;&#160;MVC</a>
+	<a href="${flowExecutionUrl}&_eventId=home">&raquo;&#160;redirect (to MVC)</a><br/>

@@ -5,9 +5,7 @@
 	<span> ${msg}</span><br/>
 	flow variable:${user.login}<br/>
 	<a href="${flowExecutionUrl}&_eventId=two">Page 2</a><br/><br/>
-	<a href="${flowExecutionUrl}&_eventId=data">Data</a><br/>
-	<a href="${flowExecutionUrl}&_eventId=custom-handler">Custom Flow Handler</a><br/>
-	<a href="${flowExecutionUrl}&_eventId=home">&raquo;&#160;MVC</a>
-	<a href="${flowExecutionUrl}&_eventId=home2">&raquo;&#160;MVC2</a>
+
+	<a href="${flowExecutionUrl}&_eventId=end">End State</a><br/>
+	<a href="${flowExecutionUrl}&_eventId=home">&raquo;&#160;redirect (to MVC)</a><br/>
 	
-	<a href="${flowExecutionUrl}&_eventId=test2">WebFlow - test2</a>
