@@ -23,7 +23,7 @@ public class User extends AbstractEntity implements Serializable {
 	@GeneratedValue(strategy = GenerationType.AUTO, generator = "seq_user")
 	private Long id;
 
-	@NotEmpty(message="not.empty")
+	@NotEmpty
 	private String login;
 
 	private String password;
