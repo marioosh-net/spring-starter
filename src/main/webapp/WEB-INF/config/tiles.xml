@@ -50,4 +50,8 @@
 		<put-attribute name="body" value="/WEB-INF/flows/test/two.jsp"/>
 	</definition>
 	
+	<definition name="secured" extends="baseLayout">	
+		<put-attribute name="body" value="/WEB-INF/pages/secured.jsp"/>
+	</definition>
+	
 </tiles-definitions>

@@ -4,8 +4,10 @@
 <h2>
 	Home Page
 </h2>
+context: ${context}
 <div style="margin: 20px;">
 	<spring:message code="hello"/>
 	<c:if test="${not empty msg}"><br/>msg: ${msg}</c:if>
 </div>
 
+<a href="<c:url value="secured"/>">Secured Area</a>

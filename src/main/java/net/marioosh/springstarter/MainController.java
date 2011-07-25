@@ -50,11 +50,6 @@ public class MainController {
 		return request.getContextPath();
 	}
 
-	@RequestMapping(value="/data", method=RequestMethod.POST)
-	public String getData(@RequestParam User data) {
-		return "index";
-	}
-	
 	@RequestMapping(value={"/home"})
 	public String index() {
 		return "index";
@@ -66,10 +61,10 @@ public class MainController {
 		return "index";
 	}
 	
-	@Secured("ROLE_ADMIN")
+	@Secured("ROLE_USER")
 	@RequestMapping("/secured")	
 	public String secured() {
-		return "index";
+		return "secured";
 	}	
 	
 	@RequestMapping("/exception")

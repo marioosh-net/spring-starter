@@ -1,4 +1,5 @@
 Spring Framework project startup
+[Spring MVC, Spring WebFlow, Hibernate, Apache Tiles]
 
 Requirements:
 	- Working PostgreSQL database (localhost)
