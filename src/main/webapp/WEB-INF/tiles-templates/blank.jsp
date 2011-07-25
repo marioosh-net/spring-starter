@@ -1,1 +1,1 @@
-<h2>BODY</h2>
+<h2>Empty Page</h2>

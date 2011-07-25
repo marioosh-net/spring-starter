@@ -26,6 +26,8 @@ public class DataHandler extends AbstractFlowHandler {
 			HttpServletRequest request, HttpServletResponse response) {
 		log.debug(outcome.getId());
 		User user = (User)outcome.getOutput().get("outuser");
+		
+		log.debug(outcome.getOutput().get("id"));
 
 		return "/home";
 	}

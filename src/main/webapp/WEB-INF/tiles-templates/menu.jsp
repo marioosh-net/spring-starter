@@ -13,6 +13,10 @@
 	<a href="<c:url value="/test?msg=Input Message to WebFlow!"/>">To WebFlow</a>
 </div>
 
+<div class="menu-item">
+	<a href="<c:url value="/home" />">To MVC</a>
+</div>
+
 <div class=" right">
 	<security:authorize ifAnyGranted="ROLE_USER,ROLE_ADMIN">
 		<security:authentication property="principal.username" />&#160;<a href="<c:url value="/logout"/>"><spring:message code="button.logout"/></a>
