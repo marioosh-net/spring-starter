@@ -19,7 +19,7 @@
 		</form:form>
 		
 		<script>
-		jQuery("#telephone").mask("999 999 999");
+		jQuery("#telephone").mask("999 999 999", {placeholder:" "});
 		jQuery("#date").mask("99.99.9999");
 		</script>
 	</div>

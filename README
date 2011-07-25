@@ -1,1 +1,7 @@
 Spring Framework project startup
+
+Requirements:
+	- Working PostgreSQL database (localhost)
+		user  : springonly
+		pass  : springonly
+		dbname: springonly
