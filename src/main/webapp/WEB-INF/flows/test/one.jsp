@@ -9,7 +9,7 @@
 		<t:input name="login"/>
 		<t:input name="email"/>
 		
-		<a href="#" onclick="jQuery('#form1').submit();">Page 2</a>
+		<a href="#" onclick="jQuery('#form1').submit();"><spring:message code="button.next"/></a>
 		
 		<%-- eventId przekazywany w polu ukrytym --%>
 		<input type="hidden" name="_eventId" value="two"/>

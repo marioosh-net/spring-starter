@@ -10,10 +10,10 @@
 		<t:input name="lastname"/>
 	
 		<%-- eventId od ktorego zalezy tranzycja przekazywany przez name, tutaj 'one' --%>
-		<input type="submit" value="Page 1" name="_eventId_one"/>
+		<input type="submit" value="<spring:message code="button.prev"/>" name="_eventId_one"/>
 		
 		<%-- eventId od ktorego zalezy tranzycja przekazywany przez name, tutaj 'three' --%>
-		<input type="submit" value="Page 3" name="_eventId_three"/>
+		<input type="submit" value="<spring:message code="button.next"/>" name="_eventId_three"/>
 	</form:form>
 	<br/>
 	
