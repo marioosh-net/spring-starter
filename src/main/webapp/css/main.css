@@ -160,3 +160,30 @@ body,html {
 	font-size: 12px;
 }
 /* form END */
+
+/* modal */
+.modal, .modal-wide {
+	color: #fff;
+	background-color:#333;
+	display:none;
+	width:350px;
+	padding:15px;
+	text-align:left;
+	border:1px solid #333;
+
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	-moz-box-shadow: 0 0 50px #ccc;
+	-webkit-box-shadow: 0 0 50px #ccc;
+}
+.modal .buttons, .modal-wide .buttons{
+	overflow: hidden;
+	width: 100%;
+}
+.modal .modal-message, .modal-wide .modal-message {
+	margin-bottom: 6px;
+}
+.modal-wide {
+	width:650px;
+}
+/* modal END */

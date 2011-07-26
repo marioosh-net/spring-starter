@@ -88,6 +88,12 @@ public class MainController {
 		return IOUtils.toByteArray(servletContext.getResourceAsStream("/images/ajax.gif"));
 	}
 	
+	@RequestMapping("/delete")
+	public String deleteUser(@RequestParam Long id) {
+		userDAO.delete(id);
+		return "redirect:/form";
+	}
+	
 	/*
 	 * teraz jest ogolny: SimpleMappingExceptionResolver
 	 * 
