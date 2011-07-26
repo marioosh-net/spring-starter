@@ -11,4 +11,6 @@ context: ${context}
 </div>
 
 <a href="<c:url value="secured"/>">Secured Area</a><br/>
-<a href="<c:url value="/image"/>"/>Image</a>
+<a href="<c:url value="/image"/>"/>Image</a><br/>
+<a href="<c:url value="/exception"/>"/>Exception</a><br/>
+<a href="<c:url value="/exception2"/>"/>Exception 2</a>

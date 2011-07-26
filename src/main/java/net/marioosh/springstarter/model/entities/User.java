@@ -10,6 +10,9 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.Valid;
 import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.binding.message.MessageBuilder;
+import org.springframework.binding.message.MessageContext;
+import org.springframework.binding.validation.ValidationContext;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.NumberFormat;
 import org.springframework.format.annotation.NumberFormat.Style;
@@ -113,5 +116,17 @@ public class User extends AbstractEntity implements Serializable {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	
+	/**
+	 * walidacja w WebFlow wewnątrz modelu
+	 * (nazwa metody postaci: validate{viewName}
+	 */
+	public void validateOne(ValidationContext context) {
+		log.debug("Validation, login: "+login);
+		if(login != null && login.isEmpty()) {
+			MessageContext messages = context.getMessageContext();
+			messages.addMessage(new MessageBuilder().error().source("login").code("error.valueEmpty").build());
+		}
 	}
 }
