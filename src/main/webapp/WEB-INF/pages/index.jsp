@@ -10,4 +10,5 @@ context: ${context}
 	<c:if test="${not empty msg}"><br/>msg: ${msg}</c:if>
 </div>
 
-<a href="<c:url value="secured"/>">Secured Area</a>
+<a href="<c:url value="secured"/>">Secured Area</a><br/>
+<a href="<c:url value="/image"/>"/>Image</a>

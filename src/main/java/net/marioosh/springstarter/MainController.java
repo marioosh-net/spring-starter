@@ -61,6 +61,10 @@ public class MainController {
 		return "index";
 	}
 	
+	/**
+	 * Metoda biznesowa wykona się, jeśli zalogowany będzie user
+	 * @return
+	 */
 	@Secured("ROLE_USER")
 	@RequestMapping("/secured")	
 	public String secured() {
@@ -83,14 +87,18 @@ public class MainController {
 	}
 		
 	@RequestMapping("/image")
-	public @ResponseBody byte[] getImage(HttpServletResponse r) throws IOException {
-		r.setContentType("image/gif");
-		return IOUtils.toByteArray(servletContext.getResourceAsStream("/images/ajax.gif"));
+	public void getImage(HttpServletResponse response) throws IOException {
+		response.setContentType("image/gif");
+		IOUtils.copy(servletContext.getResourceAsStream("/images/ajax.gif"), response.getOutputStream());
 	}
 	
 	@RequestMapping("/delete")
 	public String deleteUser(@RequestParam Long id) {
 		userDAO.delete(id);
+		
+		/**
+		 * redirect, czyli przekierowanie, w tym wypadku na strone /form"
+		 */
 		return "redirect:/form";
 	}
 	

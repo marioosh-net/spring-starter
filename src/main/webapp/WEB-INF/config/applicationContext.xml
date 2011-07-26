@@ -35,7 +35,7 @@
 	<!-- Configures the @Controller programming model -->
 	<mvc:annotation-driven />
 
-	<!-- Forwards requests to the "/" resource to the "index" view -->
+	<!-- Forwards requests to the "/" resource to the "index" view; [Tomcat problem] -->
 	<mvc:view-controller path="/" view-name="index"/>	
 	<!-- simple controllers -->
 	<mvc:view-controller path="/404" view-name="404"/>
