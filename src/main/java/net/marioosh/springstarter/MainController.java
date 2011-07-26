@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class MainController {
@@ -100,6 +101,11 @@ public class MainController {
 		 * redirect, czyli przekierowanie, w tym wypadku na strone /form"
 		 */
 		return "redirect:/form";
+	}
+	
+	@RequestMapping("/users")
+	public ModelAndView users() {
+		return new ModelAndView("users", "users", userDAO.findAll());
 	}
 	
 	/*
