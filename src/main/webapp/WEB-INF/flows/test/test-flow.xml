@@ -10,23 +10,24 @@
 	
 	<input name="msg"/>
 	
-	<view-state id="one">
+	<view-state id="one" model="user">
 		<on-entry>
-			<evaluate expression="user.setLogin(user.getLogin()+'one;')"/>
 			<set name="flowScope.msg1" value="'Message from Page 1'"/>
 		</on-entry>
 		<transition on="two" to="two"/>
-		<transition on="home" to="home"/>
 		<transition on="end" to="end"/>
 	</view-state>
 	
-	<view-state id="two">
+	<view-state id="two" model="user">
 		<on-entry>
-			<evaluate expression="user.setLogin(user.getLogin()+'two;')"/>
 			<set name="flowScope.msg1" value="'Message from Page 2'"/>
 		</on-entry>
 		<transition on="one" to="one"/>
-		<transition on="home" to="home"/>
+		<transition on="three" to="three"/>
+	</view-state>
+	
+	<view-state id="three" model="user">
+		<transition on="two" to="two"/>
 	</view-state>
 	
 	<!-- redirecty -->
@@ -35,5 +36,9 @@
 	<end-state id="end">
 		<output name="output" value="flowScope.user" type="net.marioosh.springstarter.model.entities.User"/>
 	</end-state>
+	
+	<global-transitions>
+		<transition on="home" to="home"/>	
+	</global-transitions>
 	
 </flow>

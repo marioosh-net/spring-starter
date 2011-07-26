@@ -49,6 +49,10 @@
 	<definition name="two" extends="baseLayout">	
 		<put-attribute name="body" value="/WEB-INF/flows/test/two.jsp"/>
 	</definition>
+
+	<definition name="three" extends="baseLayout">	
+		<put-attribute name="body" value="/WEB-INF/flows/test/three.jsp"/>
+	</definition>
 	
 	<definition name="secured" extends="baseLayout">	
 		<put-attribute name="body" value="/WEB-INF/pages/secured.jsp"/>

@@ -187,3 +187,7 @@ body,html {
 	width:650px;
 }
 /* modal END */
+
+.bold {
+	font-weight: bold;
+}
