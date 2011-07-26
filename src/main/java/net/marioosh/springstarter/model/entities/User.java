@@ -9,6 +9,8 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.Valid;
+import javax.validation.constraints.Size;
+
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.binding.message.MessageBuilder;
 import org.springframework.binding.message.MessageContext;
@@ -27,6 +29,7 @@ public class User extends AbstractEntity implements Serializable {
 	private Long id;
 
 	@NotEmpty
+	@Size(min=3)
 	private String login;
 
 	private String password;
@@ -121,7 +124,7 @@ public class User extends AbstractEntity implements Serializable {
 	/**
 	 * walidacja w WebFlow wewnątrz modelu
 	 * (nazwa metody postaci: validate{viewName}
-	 */
+	 
 	public void validateOne(ValidationContext context) {
 		log.debug("Validation, login: "+login);
 		if(login != null && login.isEmpty()) {
@@ -129,4 +132,5 @@ public class User extends AbstractEntity implements Serializable {
 			messages.addMessage(new MessageBuilder().error().source("login").code("error.valueEmpty").build());
 		}
 	}
+	*/
 }
