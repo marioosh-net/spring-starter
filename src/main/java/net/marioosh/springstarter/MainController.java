@@ -117,14 +117,12 @@ public class MainController {
 	@RequestMapping("/users2")
 	@ResponseBody
 	public String usersDirect() {
-		String html = "<ul>";
+		StringBuilder sb = new StringBuilder();
+		sb.append("<ul>");
 		for(User u: userDAO.findAll()) {
-			html += "<li>"+u.getLogin()+": "+
-			u.getFirstname()+": "+
-			u.getLastname()+": "+
-			u.getEmail()+"</li>";
+			sb.append("<li>"+u.getLogin()+": "+	u.getFirstname()+": "+	u.getLastname()+": "+ u.getEmail()+"</li>");
 		}
-		return html+"</ul>";
+		return sb.toString();
 	}
 	
 	/*
