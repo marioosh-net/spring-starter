@@ -18,5 +18,5 @@
 
 	<%-- eventId przekazywany w url --%>
 	<a href="${flowExecutionUrl}&_eventId=end">End State</a><br/>
-	<a href="${flowExecutionUrl}&_eventId=home">&raquo;&#160;redirect (to MVC)</a><br/>
+	<a href="${flowExecutionUrl}&_eventId=home">&laquo;&#160;back to MVC</a><br/>
 	

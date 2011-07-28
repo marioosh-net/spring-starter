@@ -10,8 +10,10 @@ context: ${context}
 	<c:if test="${not empty msg}"><br/>msg: ${msg}</c:if>
 </div>
 
-<a href="<c:url value="secured"/>">Secured Area</a><br/>
-<a href="<c:url value="/image"/>"/>Image</a><br/>
+<a href="<c:url value="/secured"/>">Secured Area</a><br/>
+<a href="<c:url value="/image"/>"/>HttpServletResponse</a><br/>
 <a href="<c:url value="/exception"/>"/>Exception</a><br/>
 <a href="<c:url value="/exception2"/>"/>Exception 2</a><br/>
-<a href="<c:url value="/users"/>"/>Users</a>
+<a href="<c:url value="/users"/>"/>Users</a><br/>
+<a href="<c:url value="/users2"/>"/>Users (Java only)</a><br/>
+<a href="<c:url value="/responseBody"/>"/>@ResponseBody</a>

@@ -124,7 +124,7 @@ public class User extends AbstractEntity implements Serializable {
 	/**
 	 * walidacja w WebFlow wewnątrz modelu
 	 * (nazwa metody postaci: validate{viewName}
-	 
+	 */
 	public void validateOne(ValidationContext context) {
 		log.debug("Validation, login: "+login);
 		if(login != null && login.isEmpty()) {
@@ -132,5 +132,5 @@ public class User extends AbstractEntity implements Serializable {
 			messages.addMessage(new MessageBuilder().error().source("login").code("error.valueEmpty").build());
 		}
 	}
-	*/
+
 }

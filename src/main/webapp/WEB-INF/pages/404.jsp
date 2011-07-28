@@ -2,4 +2,5 @@
 <%@ include file="/WEB-INF/templates/taglibs.jsp" %>
 <t:layout>
 <h2>Error 404</h2>
+Page Not Found
 </t:layout> 

@@ -15,7 +15,7 @@
 			<set name="flowScope.msg1" value="'Message from Page 1'"/>
 		</on-entry>
 		<transition on="two" to="two"/>
-		<transition on="end" to="end"/>
+		<transition on="end" to="end" validate="false"/>
 	</view-state>
 	
 	<view-state id="two" model="user">
@@ -38,7 +38,7 @@
 	</end-state>
 	
 	<global-transitions>
-		<transition on="home" to="home"/>	
+		<transition on="home" to="home" validate="false"/>	
 	</global-transitions>
 	
 </flow>

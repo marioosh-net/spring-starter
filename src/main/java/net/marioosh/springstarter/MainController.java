@@ -86,6 +86,12 @@ public class MainController {
 	public @ResponseBody User getJSON(@RequestParam Long id) {
 		return userDAO.get(id);
 	}
+	
+	@RequestMapping("/responseBody")
+	@ResponseBody
+	public String responseBody() {
+		return "@ResponseBody example";
+	}
 		
 	@RequestMapping("/image")
 	public void getImage(HttpServletResponse response) throws IOException {
@@ -106,6 +112,19 @@ public class MainController {
 	@RequestMapping("/users")
 	public ModelAndView users() {
 		return new ModelAndView("users", "users", userDAO.findAll());
+	}
+	
+	@RequestMapping("/users2")
+	@ResponseBody
+	public String usersDirect() {
+		String html = "<ul>";
+		for(User u: userDAO.findAll()) {
+			html += "<li>"+u.getLogin()+": "+
+			u.getFirstname()+": "+
+			u.getLastname()+": "+
+			u.getEmail()+"</li>";
+		}
+		return html+"</ul>";
 	}
 	
 	/*
