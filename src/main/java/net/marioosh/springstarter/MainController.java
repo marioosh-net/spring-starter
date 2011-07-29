@@ -114,6 +114,17 @@ public class MainController {
 		return new ModelAndView("users", "users", userDAO.findAll());
 	}
 	
+	@RequestMapping("/users/{page}")
+	public ModelAndView users(@PathVariable("page") int page, Model model) {
+		int p = userDAO.countPages(5);
+		int[] p2 = new int[p];
+		for(int i = 0; i< p; i++) {
+			p2[i] = i;
+		}
+		model.addAttribute("pages", p2);
+		return new ModelAndView("userslist", "users", userDAO.findAll(page));
+	}
+	
 	@RequestMapping("/users2")
 	@ResponseBody
 	public String usersDirect() {

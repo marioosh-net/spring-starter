@@ -26,6 +26,8 @@
 	
 	<div class="right" style="width: 400px;">
 		<h2>Users</h2>
+		<div id="users"><img src="<c:url value="/image"/>"/>loading...</div>
+		<%--
 		<ul>
 		<c:forEach items="${users}" var="user">
 			<li>${user.login}: ${user.firstname}: ${user.lastname}: ${user.email}: <fmt:formatDate value="${user.date}" pattern="dd.MM.yyyy"/>: <a href="<c:url value="json?id=${user.id}"/>">json</a>
@@ -33,8 +35,13 @@
 			</li>
 		</c:forEach>
 		</ul>
+		--%>
 		<t:modalyesno id="yesno">
 			<spring:message code="text.areYouSure"/>
 		</t:modalyesno>
 	</div>
 	<div class="clear"></div>
+	<script>
+	jQuery('#users').load('<c:url value="/users/0"/>');
+	</script>
+	

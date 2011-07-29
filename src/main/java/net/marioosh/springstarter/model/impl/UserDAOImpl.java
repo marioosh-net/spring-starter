@@ -51,6 +51,23 @@ public class UserDAOImpl extends GenericDAOImpl<User> implements UserDAO, UserDe
 	}
 	
 	@Override
+	public List<User> findAll(int page) {
+		int offset = page * 5;
+		String sql = "from User";
+		Query query = getSession().createQuery(sql);
+		query.setMaxResults(5);
+		query.setFirstResult(offset);
+		return query.list();
+	}
+	
+	@Override
+	public int countPages(int rowPerPage) {
+		String sql = "select count(*) from User";
+		Query query = getSession().createQuery(sql);
+		return (((Long)query.uniqueResult()).intValue() / rowPerPage) + 1;
+	}
+	
+	@Override
 	public Serializable add(User obj) {
 		obj.setPassword(DigestUtils.md5Hex(obj.getPassword()));
 		return super.add(obj);
@@ -85,5 +102,7 @@ public class UserDAOImpl extends GenericDAOImpl<User> implements UserDAO, UserDe
 		}
 
 	}
+	
+	
 
 }
