@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="/WEB-INF/templates/taglibs.jsp" %>
 <c:forEach items="${pages}" var="p">
-	<a onclick="jQuery('#users').load('<c:url value="/users/${p}"/>');" href="#">${p+1}</a>
+	<a onclick="loadAndProgress(this, '<c:url value="/users/${p}"/>', '#users');" href="#">${p+1}</a>
 </c:forEach>
 <ul>
 <c:forEach items="${users}" var="user">

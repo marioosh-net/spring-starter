@@ -32,3 +32,24 @@ function openModal(selector) {
 		});
 	}
 }
+
+/**
+ * wywolana na onclick zmienia przycisk w obrazek "loading" 
+ * az do momentu, kiedy zawartosc zostanie zaladowana do miejsca 
+ * wskazywanego przez selector
+ * 
+ * @param url
+ * @param selector
+ */
+function loadAndProgress(bt, url, selector) { 
+	var _this = bt;
+	jQuery.ajax({
+		url: url,
+		beforeSend: function() {
+			jQuery(_this).html('<img scr=\''+context+'/image'+'/>\' />');
+		},
+		success: function(data) {
+			jQuery(selector).html(data);
+		}
+	});
+}
