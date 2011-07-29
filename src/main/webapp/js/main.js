@@ -41,12 +41,11 @@ function openModal(selector) {
  * @param url
  * @param selector
  */
-function loadAndProgress(bt, url, selector) { 
-	var _this = bt;
+function loadAndProgress(button, url, selector) { 
 	jQuery.ajax({
 		url: url,
 		beforeSend: function() {
-			jQuery(_this).html('<img scr=\''+context+'/image'+'/>\' />');
+			jQuery(button).html('<img scr=\''+context+'/image'+'/>\' />');
 		},
 		success: function(data) {
 			jQuery(selector).html(data);
