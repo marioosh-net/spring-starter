@@ -84,7 +84,13 @@
 	<error-page>
 	  <error-code>500</error-code>
 	  <location>/500</location>
-	</error-page>		
+	</error-page>
+	<!--
+	<error-page>
+		<exception-type>java.lang.Exception</exception-type>
+		<location>/error</location>
+	</error-page>
+	-->	
 		
 	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>

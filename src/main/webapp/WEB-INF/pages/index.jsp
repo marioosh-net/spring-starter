@@ -16,4 +16,5 @@ context: ${context}
 <a href="<c:url value="/exception2"/>"/>Exception 2</a><br/>
 <a href="<c:url value="/users"/>"/>Users</a><br/>
 <a href="<c:url value="/users2"/>"/>Users (Java only)</a><br/>
-<a href="<c:url value="/responseBody"/>"/>@ResponseBody</a>
+<a href="<c:url value="/responseBody"/>"/>@ResponseBody</a><br/>
+<a href="<c:url value="/testowa"/>"/>Test Page</a>

@@ -136,6 +136,11 @@ public class MainController {
 		return sb.toString();
 	}
 	
+	@RequestMapping("/testowa")
+	public String testowa() {
+		return "test";
+	}
+	
 	/*
 	 * teraz jest ogolny: SimpleMappingExceptionResolver
 	 * 
