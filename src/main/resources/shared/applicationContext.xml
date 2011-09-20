@@ -182,4 +182,7 @@
 		</security:authentication-provider>
 	</security:authentication-manager>
 
+	<!-- testy -->
+	<bean class="org.springframework.mock.web.MockServletContext"/>
+	
 </beans>
