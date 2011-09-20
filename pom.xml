@@ -67,6 +67,11 @@
 
 	<build>
 		<finalName>springonly-starter</finalName>
+		<resources>
+			<resource>
+				<directory>src/main/resources/shared</directory>
+			</resource>
+		</resources>		
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
