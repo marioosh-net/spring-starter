@@ -1,8 +1,2 @@
 Spring Framework project startup
-[Spring MVC, Spring WebFlow, Hibernate, Apache Tiles]
-
-Requirements:
-	- Working PostgreSQL database (localhost)
-		user  : springonly
-		pass  : springonly
-		dbname: springonly
+[Spring MVC, Spring WebFlow, Hibernate, Apache Tiles, HSQLDB database (file)]
