@@ -138,7 +138,7 @@ public class MainController {
 	
 	@RequestMapping("/testowa")
 	public String testowa() {
-		return "test";
+		return "testx";
 	}
 	
 	/*
