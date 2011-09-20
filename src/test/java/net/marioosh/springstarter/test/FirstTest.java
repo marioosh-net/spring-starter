@@ -11,12 +11,12 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 public class FirstTest {
 
 	@Before
-	void setup() {
+	public void setup() {
 		
 	}
 	
 	@Test
-	void test() throws Exception {
+	public void test() throws Exception {
 		
 	}
 }
