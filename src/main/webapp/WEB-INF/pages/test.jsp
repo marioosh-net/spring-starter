@@ -3,4 +3,4 @@
 
 
 <tiles:insertTemplate template="/WEB-INF/pages/secured.jsp"></tiles:insertTemplate>
-<tiles:insertDefinition name="logos"/> 
+<tiles:insertDefinition name="logo"/> 
