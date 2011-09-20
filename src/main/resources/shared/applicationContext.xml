@@ -73,12 +73,9 @@
 		<!-- dostep do springowych beanow bezposrednio z view np. ${mainController} --> 
 		<property name="exposeContextBeansAsAttributes" value="true"/>
 	</bean>
-	<!-- Apache Tiles resolver -->	
+	<!-- Apache Tiles resolver 	
 	<bean id="tilesViewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver" p:order="0">
   		<property name="viewClass" value="org.springframework.web.servlet.view.tiles2.TilesView"/>
-  		<!-- tutaj niestety nie ma tej opcji :( 
-  		<property name="exposeContextBeansAsAttributes" value="true"/>
-  		-->
 	</bean>
     <bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles2.TilesConfigurer">
     	<property name="definitions">
@@ -87,6 +84,7 @@
 			</list>    	
     	</property>
     </bean>
+    -->
 		
 	<!-- Activates various annotations to be detected in bean classes: Spring's @Required and @Autowired, as well 
  	as JSR 250's @PostConstruct, @PreDestroy and @Resource (if available), JAX-WS's @WebServiceRef (if available), EJB3's @EJB (if available), 
@@ -116,7 +114,7 @@
 	<!-- ============================= -->
 	<!-- Spring Web Flow --> 
 	<!-- ============================= -->
-	<import resource="flowConfig.xml" />
+	<!-- <import resource="flowConfig.xml" /> -->
 
 
 	<!-- ============================= -->
