@@ -98,7 +98,7 @@ public class UserDAOImpl extends GenericDAOImpl<User> implements UserDAO, UserDe
 			org.springframework.security.core.userdetails.User user = new org.springframework.security.core.userdetails.User(username, password, enabled, accountNonExpired, credentialsNonExpired, accountNonLocked, authorities);
 			return user;
 		} else {
-			return null;
+			throw new UsernameNotFoundException("User not found");
 		}
 
 	}
