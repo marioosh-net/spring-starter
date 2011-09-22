@@ -1,8 +1,11 @@
 package net.marioosh.springstarter.test;
 
+import net.marioosh.springstarter.MainController;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -10,6 +13,9 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @ContextConfiguration(locations={"classpath:applicationContext.xml"})
 public class FirstTest {
 
+	@Autowired
+	private MainController mainController;
+	
 	@Before
 	public void setup() {
 		
@@ -17,6 +23,6 @@ public class FirstTest {
 	
 	@Test
 	public void test() throws Exception {
-		
+		System.out.println("C:"+mainController);
 	}
 }
