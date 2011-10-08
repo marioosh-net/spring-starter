@@ -22,7 +22,7 @@ public class CometController {
 			m.suspend(-1);
 			m.broadcast(request.getServerName() + ", message");
 		} else {
-	        Meteor m = (Meteor)req.getSession().getAttribute("meteor");
+	        Meteor m = (Meteor)request.getSession().getAttribute("meteor");
 	        response.setCharacterEncoding("UTF-8");
 		}
 		
