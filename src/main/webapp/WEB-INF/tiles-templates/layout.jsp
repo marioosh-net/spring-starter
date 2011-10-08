@@ -14,6 +14,7 @@
 	<%-- jQuery Library + ALL jQuery Tools --%>
 	<script type="text/javascript" src="<c:url value="/r/js/jquery.tools.min.js"/>"></script>
 	<script type="text/javascript" src="<c:url value="/r/js/jquery.maskedinput-1.3.min.js"/>"></script>
+	<script type="text/javascript" src="<c:url value="/r/js/jquery.atmosphere.js"/>"></script>
 	<script type="text/javascript">jQuery.noConflict();</script>
 	<script type="text/javascript" src="<c:url value="/r/js/main.js"/>"></script>
 	<link rel="stylesheet" type="text/css" href="<c:url value="/r/css/main.css"/>" media="screen">

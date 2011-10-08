@@ -57,5 +57,9 @@
 	<definition name="secured" extends="baseLayout">	
 		<put-attribute name="body" value="/WEB-INF/pages/secured.jsp"/>
 	</definition>
+
+	<definition name="comet1" extends="baseLayout">	
+		<put-attribute name="body" value="/WEB-INF/pages/comet/comet1.jsp"/>
+	</definition>
 	
 </tiles-definitions>
