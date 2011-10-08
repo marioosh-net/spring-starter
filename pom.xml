@@ -177,14 +177,19 @@
 
         <!-- logging -->
 		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
-			<version>1.2.14</version>
-		</dependency>
+		    <groupId>org.slf4j</groupId>
+		    <artifactId>jcl-over-slf4j</artifactId>
+		    <version>1.6.2</version>
+		</dependency>        
 		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-jdk14</artifactId>
-			<version>1.5.8</version>
+		    <groupId>org.slf4j</groupId>
+		    <artifactId>slf4j-log4j12</artifactId>
+		    <version>1.6.2</version>
+		</dependency>        
+		<dependency>
+		    <groupId>log4j</groupId>
+		    <artifactId>log4j</artifactId>
+		    <version>1.2.16</version>
 		</dependency>
 		<!--
 		<dependency>
@@ -388,11 +393,13 @@
 			<artifactId>tiles-jsp</artifactId>
 			<version>2.2.2</version>
 		</dependency>
+
+		<!-- atmosphere / Comet -->
 		<dependency>
-			<groupId>org.apache.tiles</groupId>
-			<artifactId>tiles-template</artifactId>
-			<version>2.2.2</version>
-		</dependency>
+			<groupId>org.atmosphere</groupId>
+			<artifactId>atmosphere-runtime</artifactId>
+			<version>0.7.2</version>
+		</dependency>		
     								
 	</dependencies>
 

@@ -21,18 +21,22 @@
 	    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
 
-	<servlet>
-		<servlet-name>springonly-starter</servlet-name>
-		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <servlet>
+        <servlet-name>meteor</servlet-name>
+        <servlet-class>org.atmosphere.cpr.MeteorServlet</servlet-class>
+        <init-param>
+          <param-name>org.atmosphere.servlet</param-name>
+          <param-value>org.springframework.web.servlet.DispatcherServlet</param-value>
+        </init-param>
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
 			<param-value></param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
-
+	
 	<servlet-mapping>
-		<servlet-name>springonly-starter</servlet-name>
+		<servlet-name>meteor</servlet-name>
 		<!-- <url-pattern>*.html</url-pattern> -->
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
