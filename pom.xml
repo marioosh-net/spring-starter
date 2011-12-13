@@ -45,6 +45,13 @@
 						</executions>
 						<configuration>
 							<nosuffix>true</nosuffix>
+							<excludes>
+								<exclude>**/jquery*.js</exclude>
+							</excludes>
+							<includes>
+								<include>**/main*.js</include>
+								<include>**/main*.css</include>
+							</includes>
 						</configuration>
 					</plugin>
 					
@@ -55,7 +62,7 @@
 				        <version>2.1.1</version>					
 				        <configuration>
 				        	<!-- nie przykrywaj mi skompresowanych yuicompressorem .js i .css -->
-				        	<warSourceExcludes>**/*.css,**/*.js</warSourceExcludes>
+				        	<warSourceExcludes>**/main.css,**/main.js</warSourceExcludes>
 				        	<!-- zrob mi jara z classes -->
 				        	<archiveClasses>true</archiveClasses>
 				        </configuration>
