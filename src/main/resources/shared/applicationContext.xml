@@ -123,7 +123,7 @@
 	<!-- postgresql / localhost -->
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
 		<property name="driverClassName" value="org.hsqldb.jdbcDriver" />
-		<property name="url" value="jdbc:hsqldb:file:springonly" />
+		<property name="url" value="jdbc:hsqldb:file:springonly;shutdown=true" />
 		<property name="username" value="sa" />
 		<property name="password" value="" />
 	</bean>
