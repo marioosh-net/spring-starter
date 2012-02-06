@@ -38,10 +38,10 @@
 	<!-- Forwards requests to the "/" resource to the "index" view; [Tomcat problem] -->
 	<mvc:view-controller path="/" view-name="index"/>	
 	<!-- simple controllers -->
-	<mvc:view-controller path="/404" view-name="404"/>
-	<mvc:view-controller path="/403" view-name="403"/>
-	<mvc:view-controller path="/500" view-name="500"/>
-	<mvc:view-controller path="/error" view-name="error"/>
+	<mvc:view-controller path="/404" view-name="errors/404"/>
+	<mvc:view-controller path="/403" view-name="errors/403"/>
+	<mvc:view-controller path="/500" view-name="errors/500"/>
+	<mvc:view-controller path="/error" view-name="errors/error"/>
 	<mvc:view-controller path="/login" view-name="login"/>	
 
 	<!-- Configures Handler Interceptors -->	
