@@ -1,6 +1,7 @@
 package net.marioosh.springstarter;
 
 import java.io.IOException;
+import java.util.concurrent.Future;
 
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
@@ -10,6 +11,8 @@ import net.marioosh.springstarter.model.entities.User;
 import org.apache.commons.io.IOUtils;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Async;
+import org.springframework.scheduling.annotation.AsyncResult;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -34,6 +37,9 @@ public class MainController {
 
 	@Autowired
 	private UserDAO userDAO;
+	
+	@Autowired
+	private UtilService utilService;
 	
 	@Autowired
 	private ServletContext servletContext;
@@ -141,6 +147,12 @@ public class MainController {
 		return "testx";
 	}
 	
+	@RequestMapping("/asyncTest")
+	public String asyncTest() {
+		utilService.async();
+		return "index";
+	}
+
 	/*
 	 * teraz jest ogolny: SimpleMappingExceptionResolver
 	 * 
@@ -150,5 +162,4 @@ public class MainController {
 		return new ModelAndView("error", "message", ex.getMessage());
 	}	
 	*/
-
 }

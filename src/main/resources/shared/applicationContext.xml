@@ -39,7 +39,7 @@
 	<mvc:annotation-driven />
 	
 	<!-- Enable @Scheduled and @Async -->
-	<task:annotation-driven />
+	<task:annotation-driven proxy-target-class="true" />
 
 	<!-- Forwards requests to the "/" resource to the "index" view; [Tomcat problem] -->
 	<mvc:view-controller path="/" view-name="index"/>	
