@@ -25,6 +25,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
+import org.springframework.web.context.support.WebApplicationContextUtils;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -51,8 +52,7 @@ public class MainController {
 	 * @return
 	 */
 	@ModelAttribute("context")
-	public String context(Model model) {
-		HttpServletRequest request = ((ServletRequestAttributes)RequestContextHolder.currentRequestAttributes()).getRequest();
+	public String context(Model model, HttpServletRequest request) {
 		model.addAttribute("servername", request.getServerName());
 		return request.getContextPath();
 	}
@@ -152,6 +152,14 @@ public class MainController {
 		utilService.async();
 		return "index";
 	}
+	
+	@RequestMapping("/asyncTest2")
+	public String asyncTest(HttpServletRequest request) {
+		RequestBean requestBean = WebApplicationContextUtils.getWebApplicationContext(servletContext).getBean(RequestBean.class);
+		requestBean.async();
+		return "index";
+	}
+
 
 	/*
 	 * teraz jest ogolny: SimpleMappingExceptionResolver

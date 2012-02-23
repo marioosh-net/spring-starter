@@ -116,6 +116,8 @@
 		</property>
 	</bean> 
 	
+	<bean id="requestBean" class="net.marioosh.springstarter.RequestBean" scope="request"/>
+	
 	
 	<!-- ============================= -->
 	<!-- Spring Web Flow --> 
