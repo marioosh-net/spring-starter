@@ -147,11 +147,13 @@ public class MainController {
 		return "testx";
 	}
 	
+	/*
 	@RequestMapping("/asyncTest")
 	public String asyncTest() {
 		utilService.async();
 		return "index";
 	}
+	*/
 	
 	@RequestMapping("/asyncTest2")
 	public String asyncTest(HttpServletRequest request) {

@@ -40,7 +40,7 @@ public class UtilService implements Serializable {
 
 	/**
 	 * method with asynchronous execution
-	 */
+	 *
     @Async
     public void async() {
         String threadName = Thread.currentThread().getName();
@@ -53,5 +53,6 @@ public class UtilService implements Serializable {
         }
         log.info("async(" + threadName + ") DONE");
     }
+    */
 	
 }
