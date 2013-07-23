@@ -190,5 +190,18 @@
 
 	<!-- testy -->
 	<bean class="org.springframework.mock.web.MockServletContext"/>
-	
+
+	<!-- === -->
+	<!-- RMI -->
+	<!-- === -->
+	<!-- wystawienie servisu/usługi po RMI -->
+	<bean class="org.springframework.remoting.rmi.RmiServiceExporter" p:service-ref="rmi">
+		<property name="serviceInterface" value="net.marioosh.springstarter.rmi.RMIService"/>
+		<property name="serviceName" value="RMIService"/>
+	</bean>
+	<!-- client RMI / powinnien byc w innej aplikacji -->
+	<bean id="rmiService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean" >
+		<property name="serviceInterface" value="net.marioosh.springstarter.rmi.RMIService"/>
+		<property name="serviceUrl" value="rmi://localhost/RMIService"/>
+	</bean>	
 </beans>

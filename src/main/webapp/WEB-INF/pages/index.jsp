@@ -19,4 +19,5 @@ context: ${context}
 <a href="<c:url value="/responseBody"/>"/>@ResponseBody</a><br/>
 <a href="<c:url value="/testowa"/>"/>Test Page</a><br/>
 <a href="<c:url value="/asyncTest"/>"/>Async method test</a><br/>
-<a href="<c:url value="/asyncTest2"/>"/>Async method on request bean</a>
+<a href="<c:url value="/asyncTest2"/>"/>Async method on request bean</a><br/>
+<a href="<c:url value="/testRMI"/>"/>test RMI</a>
