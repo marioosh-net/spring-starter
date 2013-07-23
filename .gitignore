@@ -1,4 +1,6 @@
 /target
 /springonly.*
 /.settings
+/.project
+/.classpath
 
