@@ -5,9 +5,9 @@ import org.springframework.stereotype.Service;
 import net.marioosh.springstarter.model.entities.User;
 
 @Service
-@WebService(serviceName = "SomeWS")
-public class SomeWebService {
+public class SomeWebService implements SomeWebServiceInterface {
 
+	@Override
 	public void showUser(User user) {
 		System.out.println(user);
 	}
