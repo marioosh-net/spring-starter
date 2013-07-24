@@ -195,17 +195,19 @@
 	<!-- RMI -->
 	<!-- === -->
 	<!-- wystawienie servisu/usługi po RMI -->
-	<bean class="org.springframework.remoting.rmi.RmiServiceExporter" p:service-ref="rmi">
+	<bean id="rmiOriginal" class="org.springframework.remoting.rmi.RmiServiceExporter" p:service-ref="rmi">
 		<property name="serviceInterface" value="net.marioosh.springstarter.rmi.RMIService"/>
 		<property name="serviceName" value="RMIService"/>
 	</bean>
 	<!-- client RMI / powinnien byc w innej aplikacji -->
-	<bean id="rmiService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean" >
+	<bean id="rmiService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean" depends-on="rmiOriginal" >
 		<property name="serviceInterface" value="net.marioosh.springstarter.rmi.RMIService"/>
 		<property name="serviceUrl" value="rmi://localhost/RMIService"/>
 	</bean>
 
-    <!-- JAX-WS -->	
+    <!-- ====== -->
+    <!-- JAX-WS -->
+    <!-- ====== -->	
     <!-- SimpleJaxWsServiceExporter wykrywa beany w kontekście Springa z adnotacją @WebService i eksportuje je przez domyślny JAX-WS serwer -->
     <!-- http://localhost:8181/SomeWS?wsdl -->
     <bean class="org.springframework.remoting.jaxws.SimpleJaxWsServiceExporter">
@@ -223,4 +225,23 @@
         <property name="portName" value="AccelerationUnitSoap"/>
     </bean>
 		
+    <!-- === -->
+    <!-- JMS -->
+    <!-- === -->
+    <!-- broker -->
+	<bean id="jmsConnectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory" >
+	   <property name="brokerURL" value="http://localhost:91919"></property>
+	</bean>
+	<!-- kolejka jms -->
+	<bean id="jmsQueue" class="org.apache.activemq.command.ActiveMQQueue" >
+	   <constructor-arg name="name" value="queue"/>
+	</bean>
+	<!-- temat jms -->
+	<bean id="jmsTopic" class="org.apache.activemq.command.ActiveMQTopic" >
+	   <constructor-arg name="name" value="topic"/>
+	</bean>
+	<bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate" >
+	   <property name="connectionFactory" ref="jmsConnectionFactory"/>
+	</bean>
+	
 </beans>

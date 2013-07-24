@@ -11,14 +11,15 @@ context: ${context}
 </div>
 
 <a href="<c:url value="/secured"/>">Secured Area</a><br/>
-<a href="<c:url value="/image"/>"/>HttpServletResponse</a><br/>
-<a href="<c:url value="/exception"/>"/>Exception</a><br/>
-<a href="<c:url value="/exception2"/>"/>Exception 2</a><br/>
-<a href="<c:url value="/users"/>"/>Users</a><br/>
-<a href="<c:url value="/users2"/>"/>Users (Java only)</a><br/>
+<a href="<c:url value="/image"/>">HttpServletResponse</a><br/>
+<a href="<c:url value="/exception"/>">Exception</a><br/>
+<a href="<c:url value="/exception2"/>">Exception 2</a><br/>
+<a href="<c:url value="/users"/>">Users</a><br/>
+<a href="<c:url value="/users2"/>">Users (Java only)</a><br/>
 <a href="<c:url value="/responseBody"/>"/>@ResponseBody</a><br/>
-<a href="<c:url value="/testowa"/>"/>Test Page</a><br/>
-<a href="<c:url value="/asyncTest"/>"/>Async method test</a><br/>
-<a href="<c:url value="/asyncTest2"/>"/>Async method on request bean</a><br/>
-<a href="<c:url value="/testRMI"/>"/>test RMI</a><c:if test="${rmiTestValue != null}"> ${rmiTestValue}</c:if><br/>
-<a href="<c:url value="/testWS"/>"/>test WS</a><c:if test="${acc != null}"> ${acc}</c:if>
+<a href="<c:url value="/testowa"/>">Test Page</a><br/>
+<a href="<c:url value="/asyncTest"/>">Async method test</a><br/>
+<a href="<c:url value="/asyncTest2"/>">Async method on request bean</a><br/>
+<a href="<c:url value="/testRMI"/>">test RMI</a><c:if test="${rmiTestValue != null}"> ${rmiTestValue}</c:if><br/>
+<a href="<c:url value="/testWS"/>">test WS</a><c:if test="${acc != null}"> ${acc}</c:if><br/>
+<a href="<c:url value="/jms/send"/>">JMS: send message to queue</a>

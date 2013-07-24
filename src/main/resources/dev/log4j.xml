@@ -82,7 +82,11 @@
 	</logger>
 	<logger name="org.springframework.jdbc.datasource">
 		<level value="info"/>
-	</logger>		
+	</logger>
+    <logger name="org.springframework.core.env">
+        <level value="info"/>
+    </logger>	
+			
 	<!-- LOGGERY END -->
 
 	<!-- ROOT LOGGER -->

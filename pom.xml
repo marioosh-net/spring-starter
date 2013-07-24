@@ -117,7 +117,7 @@
 			                <keyPassword>jetty6</keyPassword>
 			            </connector>						
 					</connectors>
-					<reload>manual</reload>
+					<reload>automatic</reload>
 					<scanIntervalSeconds>2</scanIntervalSeconds>
 					<scanTargetPatterns>
 						<scanTargetPattern>
@@ -253,6 +253,13 @@
 		    <artifactId>spring-test</artifactId>
 		    <version>${springVersion}</version>
 		</dependency>
+
+        <!-- jms / JmsTemplate etc -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jms</artifactId>
+            <version>${springVersion}</version>
+        </dependency>
 		
 		<!-- xml -->
 		<dependency>
@@ -413,7 +420,14 @@
 			<artifactId>tiles-template</artifactId>
 			<version>2.2.2</version>
 		</dependency>
-					
+
+        <!-- JMS / broker ActiveMQ -->
+		<dependency>
+			<groupId>org.apache.activemq</groupId>
+			<artifactId>activemq-all</artifactId>
+			<version>5.8.0</version>
+		</dependency>				
+			
 	</dependencies>
 
 </project>
