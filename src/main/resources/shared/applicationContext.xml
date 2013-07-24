@@ -203,5 +203,13 @@
 	<bean id="rmiService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean" >
 		<property name="serviceInterface" value="net.marioosh.springstarter.rmi.RMIService"/>
 		<property name="serviceUrl" value="rmi://localhost/RMIService"/>
-	</bean>	
+	</bean>
+
+    <!-- JAX-WS -->	
+    <!-- SimpleJaxWsServiceExporter wykrywa beany w kontekście Springa z adnotacją @WebService i eksportuje je przez domyślny JAX-WS serwer -->
+    <!-- http://localhost:8181/SomeWS?wsdl -->
+    <bean class="org.springframework.remoting.jaxws.SimpleJaxWsServiceExporter">
+       <property name="baseAddress" value="http://localhost:8181/"/>
+    </bean>
+		
 </beans>
