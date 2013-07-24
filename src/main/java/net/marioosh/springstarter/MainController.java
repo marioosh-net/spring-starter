@@ -131,15 +131,18 @@ public class MainController {
 		return new ModelAndView("userslist", "users", userDAO.findAll(page));
 	}
 	
-	@RequestMapping("/users2")
+	@RequestMapping(value="/users2")
 	@ResponseBody
-	public String usersDirect() {
+	public User usersDirect() {
+		return new User();
+		/*
 		StringBuilder sb = new StringBuilder();
 		sb.append("<ul>");
 		for(User u: userDAO.findAll()) {
 			sb.append("<li>"+u.getLogin()+": "+	u.getFirstname()+": "+	u.getLastname()+": "+ u.getEmail()+"</li>");
 		}
 		return sb.toString();
+		*/
 	}
 	
 	@RequestMapping("/testowa")
